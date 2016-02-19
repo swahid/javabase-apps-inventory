@@ -130,6 +130,7 @@
         </dependency>
     </dependencies>
     <build>
+        <finalName>IMS</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -138,13 +139,12 @@
                     <version>2.4</version>
                     <configuration>
                         <warSourceDirectory>src/main/webapp</warSourceDirectory>
-                        <warName>inventory</warName>
+                        <warName>IMS</warName>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
  
-        <finalName>inventory</finalName>
     </build>
 </project>
