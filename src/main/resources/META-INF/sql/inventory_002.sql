@@ -28,8 +28,8 @@ USE inventory;
 DROP TABLE IF EXISTS `color`;
 CREATE TABLE `color` (
   `col_id` int(10) unsigned NOT NULL auto_increment,
-  `col_code` varchar(45) default NULL,
-  `name` varchar(45) default NULL,
+  `col_code` varchar(45) character set latin1 default NULL,
+  `name` varchar(45) character set latin1 default NULL,
   PRIMARY KEY  (`col_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -48,9 +48,9 @@ CREATE TABLE `color` (
 DROP TABLE IF EXISTS `company`;
 CREATE TABLE `company` (
   `com_id` int(10) unsigned NOT NULL auto_increment,
-  `com_code` varchar(45) default NULL,
-  `name` varchar(45) default NULL,
-  `details` varchar(45) default NULL,
+  `com_code` varchar(45) character set latin1 default NULL,
+  `name` varchar(45) character set latin1 default NULL,
+  `details` varchar(45) character set latin1 default NULL,
   PRIMARY KEY  (`com_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -69,8 +69,8 @@ CREATE TABLE `company` (
 DROP TABLE IF EXISTS `pro_catagory`;
 CREATE TABLE `pro_catagory` (
   `cat_id` int(10) unsigned NOT NULL auto_increment,
-  `cat_code` varchar(45) default NULL,
-  `cat_details` varchar(45) default NULL,
+  `cat_code` varchar(45) character set latin1 default NULL,
+  `cat_details` varchar(45) character set latin1 default NULL,
   PRIMARY KEY  (`cat_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -89,8 +89,8 @@ CREATE TABLE `pro_catagory` (
 DROP TABLE IF EXISTS `pro_item`;
 CREATE TABLE `pro_item` (
   `item_id` int(10) unsigned NOT NULL auto_increment,
-  `item_code` varchar(45) default NULL,
-  `item_details` varchar(45) default NULL,
+  `item_code` varchar(45) character set latin1 default NULL,
+  `item_details` varchar(45) character set latin1 default NULL,
   PRIMARY KEY  (`item_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -109,10 +109,10 @@ CREATE TABLE `pro_item` (
 DROP TABLE IF EXISTS `retailer`;
 CREATE TABLE `retailer` (
   `retailer_id` int(10) unsigned NOT NULL auto_increment,
-  `store_name` varchar(45) default NULL,
-  `name` varchar(45) default NULL,
-  `contact` varchar(45) default NULL,
-  `location` varchar(45) default NULL,
+  `store_name` varchar(45) character set latin1 default NULL,
+  `name` varchar(45) character set latin1 default NULL,
+  `contact` varchar(45) character set latin1 default NULL,
+  `location` varchar(45) character set latin1 default NULL,
   `date` datetime default NULL,
   PRIMARY KEY  (`retailer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -132,8 +132,8 @@ CREATE TABLE `retailer` (
 DROP TABLE IF EXISTS `retiail_info`;
 CREATE TABLE `retiail_info` (
   `retail_id` int(10) unsigned NOT NULL auto_increment,
-  `contact` varchar(45) default NULL,
-  `vouture_no` varchar(45) default NULL,
+  `contact` varchar(45) character set latin1 default NULL,
+  `vouture_no` varchar(45) character set latin1 default NULL,
   `quantity` int(10) unsigned default NULL,
   `total_amount` double default NULL,
   `pay` double default NULL,
@@ -156,7 +156,7 @@ DROP TABLE IF EXISTS `salse_invoice`;
 CREATE TABLE `salse_invoice` (
   `sal_id` int(10) unsigned NOT NULL auto_increment,
   `invoice` int(10) unsigned default NULL,
-  `product` varchar(45) default NULL,
+  `product` varchar(45) character set latin1 default NULL,
   `quantity` int(10) unsigned default NULL,
   `discount` double default NULL,
   `date` datetime default NULL,
@@ -178,7 +178,7 @@ CREATE TABLE `salse_invoice` (
 DROP TABLE IF EXISTS `stock`;
 CREATE TABLE `stock` (
   `stock_id` int(10) unsigned NOT NULL auto_increment,
-  `product` varchar(45) default NULL,
+  `product` varchar(45) character set latin1 default NULL,
   `quantity` double default NULL,
   `unit_price` double default NULL,
   `salse_price` double default NULL,
@@ -201,12 +201,12 @@ CREATE TABLE `stock` (
 DROP TABLE IF EXISTS `store`;
 CREATE TABLE `store` (
   `store_id` int(10) unsigned NOT NULL auto_increment,
-  `vouture_no` varchar(45) default NULL,
-  `product` varchar(45) default NULL,
-  `quantity` varchar(45) default NULL,
-  `unite_price` varchar(45) default NULL,
-  `salse_price` varchar(45) default NULL,
-  `top_less` varchar(45) default NULL,
+  `vouture_no` varchar(45) character set latin1 default NULL,
+  `product` varchar(45) character set latin1 default NULL,
+  `quantity` varchar(45) character set latin1 default NULL,
+  `unite_price` varchar(45) character set latin1 default NULL,
+  `salse_price` varchar(45) character set latin1 default NULL,
+  `top_less` varchar(45) character set latin1 default NULL,
   PRIMARY KEY  (`store_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -225,12 +225,15 @@ CREATE TABLE `store` (
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `user_id` int(10) unsigned NOT NULL auto_increment,
-  `user_name` varchar(45) default NULL,
-  `first_name` varchar(45) default NULL,
-  `last_name` varchar(45) default NULL,
-  `contact` varchar(45) default NULL,
-  `role` varchar(45) default NULL,
-  PRIMARY KEY  (`user_id`)
+  `user_name` varchar(12) character set latin1 NOT NULL,
+  `first_name` varchar(45) character set latin1 default NULL,
+  `last_name` varchar(45) character set latin1 default NULL,
+  `contact` varchar(45) character set latin1 default NULL,
+  `role_id` int(10) unsigned default NULL,
+  `password` varchar(20) NOT NULL,
+  PRIMARY KEY  (`user_id`),
+  KEY `FK_userRole_1` (`role_id`),
+  CONSTRAINT `FK_userRole_1` FOREIGN KEY (`role_id`) REFERENCES `userrole` (`role_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -238,7 +241,34 @@ CREATE TABLE `user` (
 --
 
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` (`user_id`,`user_name`,`first_name`,`last_name`,`contact`,`role_id`,`password`) VALUES 
+ (1,'saurav','saurav','wahid',NULL,NULL,'');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
+
+
+--
+-- Definition of table `userrole`
+--
+
+DROP TABLE IF EXISTS `userrole`;
+CREATE TABLE `userrole` (
+  `role_id` int(10) unsigned NOT NULL auto_increment,
+  `user_role` varchar(45) default NULL,
+  PRIMARY KEY  (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userrole`
+--
+
+/*!40000 ALTER TABLE `userrole` DISABLE KEYS */;
+INSERT INTO `userrole` (`role_id`,`user_role`) VALUES 
+ (1,'admin'),
+ (2,'manager'),
+ (3,'salesman'),
+ (4,'storekeeper'),
+ (5,'user');
+/*!40000 ALTER TABLE `userrole` ENABLE KEYS */;
 
 
 

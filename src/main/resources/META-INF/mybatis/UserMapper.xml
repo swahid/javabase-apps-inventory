@@ -1,0 +1,27 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- 
+    ================================================================================
+    @author     Saurav Wahid<saurav@medisys.com.sa>
+    @web        www.javabase.org
+    @version    1.0.1
+    @since      1.0.0
+    ================================================================================
+    -->
+<mapper namespace="org.javabase.apps.mapper.UserMapper">
+
+    <resultMap id="list" type="User">
+        <result property="userId"  column="user_id" />
+        <result property="userName"  column="user_name" />
+        <result property="firstName"  column="first_name" />
+        <result property="lastName"  column="last_name" />
+        <result property="contact"  column="contact" />
+        <result property="userRole"  column="role_id" />
+    </resultMap>
+    
+    <select id="selectUser" resultMap="list">
+        select * from user
+    </select>
+</mapper>

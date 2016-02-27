@@ -8,7 +8,17 @@
       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
- 
+    <!-- 
+    ================================================================================
+    application context orm
+    ================================================================================
+    @author     Saurav Wahid<saurav@medisys.com.sa>
+    @web        www.javabase.org
+    @version    1.0.1
+    @since      1.0.0
+    ================================================================================
+    -->
+    
     <mvc:annotation-driven />
     <context:component-scan base-package="org.javabase" />
 
@@ -39,13 +49,14 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
         <property name="typeAliasesPackage" value="org.javabase.apps.entity" />
+        <property name="mapperLocations" value="classpath:/META-INF/mybatis/*.xml" />
+        <property name="dataSource" ref="dataSource" />
     </bean>
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg index="0" ref="sqlSessionFactory" />
     </bean>
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <bean id="mapperScanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="org.javabase.apps.mapper" />
     </bean>
 
