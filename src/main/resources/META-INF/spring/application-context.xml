@@ -18,7 +18,16 @@
     @since      1.0.0
     ================================================================================
     -->
-    
+  <!-- **************************************************************** -->
+  <!--  RESOURCE FOLDERS CONFIGURATION                                  -->
+  <!--  Dispatcher configuration for serving static resources           -->
+  <!-- **************************************************************** -->
+  <mvc:resources location="/WEB-INF/template/images/" mapping="images/**" />
+  <mvc:resources location="/WEB-INF/template/css/" mapping="css/**" />
+  <mvc:resources location="/WEB-INF/template/fonts/" mapping="fonts/**" />
+  <mvc:resources location="/WEB-INF/template/js/" mapping="js/**" />
+  
+  
     <mvc:annotation-driven />
     <context:component-scan base-package="org.javabase" />
 
