@@ -13,7 +13,7 @@
     <body>
         <h1>Inventory Management System</h1>
         
-        <a href="<c:url value='/admin.html'/>">admin Panel</a>
+        <a href="<c:url value='/show'/>">click here</a>
         
     </body>
     

@@ -8,6 +8,6 @@
         <title>Welcome</title>
     </head> 
     <body>
-        <%@include file="../template/layout/web/index.html" %>
+        <h1>welcome invetory managenment system</h1>
     </body>
 </html>
