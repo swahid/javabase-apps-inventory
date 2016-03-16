@@ -131,23 +131,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>ims</finalName>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>2.6</version>
-                    <configuration>
-                        <warSourceDirectory>src/main/resources</warSourceDirectory>
-                        <warSourceDirectory>src/main/webapp</warSourceDirectory>
-                        <warName>IMS</warName>
-                        <failOnMissingWebXml>false</failOnMissingWebXml>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
- 
+    	<finalName>ims</finalName>
     </build>
     <organization>
     	<url>http://javabase.org</url>
