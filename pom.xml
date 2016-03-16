@@ -27,8 +27,6 @@
         <!-- Test -->
         <junit.version>4.11</junit.version>
         
-        <!-- war compile -->
-        <m2eclipse.wtp.contextRoot>/</m2eclipse.wtp.contextRoot>
     </properties>
     
     <dependencies>
@@ -133,7 +131,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>IMS</finalName>
+        <finalName>ims</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
