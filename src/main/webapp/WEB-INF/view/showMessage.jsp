@@ -1,9 +1,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags/layout/" %>
 
-<t:genericpage>
+<t:main>
     <jsp:attribute name="header">
       <h1>Welcome</h1>
+    </jsp:attribute>
+    <jsp:attribute name="sidebar">
+      <h1>sidebar</h1>
     </jsp:attribute>
     <jsp:attribute name="footer">
       <p id="copyright">Copyright 1927, Future Bits When There Be Bits Inc.</p>
@@ -11,4 +14,4 @@
     <jsp:body>
         <p>Hi I'm the heart of the message</p>
     </jsp:body>
-</t:genericpage>
+</t:main>
