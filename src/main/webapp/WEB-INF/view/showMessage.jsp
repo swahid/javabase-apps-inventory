@@ -5,12 +5,12 @@
     <title>Admin Panel</title>
 </head>
 <body>
-    <t:main>
+    <t:admin>
         <jsp:body>
             <p>Hi ${user}</p>
             <p>Welcome to ${message}</p>
         </jsp:body>
-    </t:main>
+    </t:admin>
 </body>
 
 </html>
