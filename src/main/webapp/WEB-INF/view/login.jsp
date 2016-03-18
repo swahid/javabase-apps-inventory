@@ -15,7 +15,7 @@
   <body>
 
     <div class="form">
-      
+      ${message}
       <ul class="tab-group">
         <li class="tab active"><a href="#signup">Sign Up</a></li>
         <li class="tab"><a href="#login">Log In</a></li>
@@ -24,7 +24,7 @@
       <div class="tab-content">
         <div id="signup">   
           <h1>Sign Up for Free </h1>
-          <c:url var="action" value="login" />
+        <c:url var="action" value="login/registration" />
         <form:form action="${action}" method="post" commandName="user">
           <div class="top-row">
             <div class="field-wrap">
@@ -56,7 +56,7 @@
             <form:input path="password" />
           </div>
           
-          <input type="submit" class="button button-block"/>Get Started</button>
+          <button type="submit" class="button button-block"/>Get Started</button>
           
           </form:form>
 
@@ -65,27 +65,28 @@
         <div id="login">   
           <h1>Welcome Back!</h1>
           
-          <form action="/" method="post">
+          <c:url var="action" value="login" />
+          <form:form action="${action}" method="post" commandName="user">
           
             <div class="field-wrap">
             <label>
-              Email Address<span class="req">*</span>
+              User Name<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <form:input path="userName" />
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <form:input path="password" />
           </div>
           
           <p class="forgot"><a href="#">Forgot Password?</a></p>
           
-          <button class="button button-block"/>Log In</button>
+          <button type="submit" class="button button-block"/>Log In</button>
           
-          </form>
+          </form:form>
 
         </div>
         

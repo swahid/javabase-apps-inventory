@@ -16,4 +16,8 @@ public interface UserService {
     
     public List<User> selectUser();
     
+    public List<User> login(User user);
+    
+    public boolean insert(User user);
+    
 }

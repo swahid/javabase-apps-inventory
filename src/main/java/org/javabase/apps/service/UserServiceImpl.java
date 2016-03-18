@@ -14,9 +14,19 @@ public class UserServiceImpl implements UserService{
     @Autowired
     UserMapper  usermapper;
     
-    @Transactional
+    @Transactional(readOnly=true)
     public List<User> selectUser() {
         return usermapper.selectUser();
+    }
+    
+    @Transactional(readOnly=true)
+    public List<User> login(User user) {
+        return usermapper.login(user);
+    }
+    
+    @Transactional
+    public boolean insert(User user) {
+        return usermapper.insert(user);
     }
     
 }

@@ -19,9 +19,36 @@
         <result property="lastName"  column="last_name" />
         <result property="contact"  column="contact" />
         <result property="userRole"  column="role_id" />
+        <result property="password"  column="password" />
     </resultMap>
     
     <select id="selectUser" resultMap="list">
         select * from user
     </select>
+    
+    <select id="login" resultMap="list" parameterType="User">
+        select * from user
+        where user_name = #{userName}
+        and   password  = #{password}
+    </select>
+    
+    
+    <insert id="insert" parameterType="User">
+    INSERT INTO user(
+        user_name,
+        first_name,
+        last_name,
+        contact,
+        password
+    )
+    values(
+        #{userName},
+        #{firstName},
+        #{lastName},
+        #{contact},
+        #{password}
+    )
+    </insert>
+    
+    
 </mapper>
