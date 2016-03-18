@@ -16,6 +16,7 @@
         <jsp:body>
             <h1>Inventory Management System</h1>
             <a href="<c:url value='/show'/>">click here</a>
+            <a href="<c:url value='/login'/>">Login Here</a>
         </jsp:body>
     </t:main>
     
