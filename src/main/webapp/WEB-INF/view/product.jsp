@@ -9,7 +9,7 @@
         <jsp:body>
             <p>Hi ${user}</p>
             <p>Welcome to ${message}</p>
-            <a href="product">product page</a>
+            <input type="text" />
         </jsp:body>
     </t:admin>
 </body>
