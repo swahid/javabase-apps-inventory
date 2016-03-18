@@ -18,8 +18,17 @@ public class User implements Serializable{
     private String userName;
     private String firstName;
     private String lastName;
+    private String password;
     private String contact;
     private String userRole;
+    
+    
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
     public String getUserId() {
         return userId;
     }

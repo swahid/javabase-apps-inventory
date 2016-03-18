@@ -1,3 +1,5 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html >
   <head>
@@ -9,12 +11,7 @@
 
     
         <link rel="stylesheet" href="css/login/style.css">
-
-    
-    
-    
   </head>
-
   <body>
 
     <div class="form">
@@ -27,42 +24,41 @@
       <div class="tab-content">
         <div id="signup">   
           <h1>Sign Up for Free </h1>
-          
-          <form action="#" method="post">
-          
+          <c:url var="action" value="login" />
+        <form:form action="${action}" method="post" commandName="user">
           <div class="top-row">
             <div class="field-wrap">
               <label>
                 First Name<span class="req">*</span>
               </label>
-              <input type="text" required autocomplete="off" />
+              <form:input path="firstName" />
             </div>
         
             <div class="field-wrap">
               <label>
                 Last Name<span class="req">*</span>
               </label>
-              <input type="text"required autocomplete="off"/>
+              <form:input path="lastName" />
             </div>
           </div>
 
           <div class="field-wrap">
             <label>
-              Email Address<span class="req">*</span>
+              User Name<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <form:input path="userName" />
           </div>
           
           <div class="field-wrap">
             <label>
               Set A Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <form:input path="password" />
           </div>
           
-          <button type="submit" class="button button-block"/>Get Started</button>
+          <input type="submit" class="button button-block"/>Get Started</button>
           
-          </form>
+          </form:form>
 
         </div>
         

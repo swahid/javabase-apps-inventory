@@ -4,6 +4,8 @@
  */
 package org.javabase.apps.controller;
 
+import org.javabase.apps.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,10 +20,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value="/login")
 public class LoginController {
     
+    
     @RequestMapping(method=RequestMethod.GET)
-    public String index(ModelMap m){
+    public String index(ModelMap m, User user){
         
-        m.put("user", "saurav");
+        m.put("user", new User());
         
         return "login";
     }
