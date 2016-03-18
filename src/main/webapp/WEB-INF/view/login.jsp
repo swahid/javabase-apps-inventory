@@ -15,7 +15,7 @@
   <body>
 
     <div class="form">
-      ${message}
+      
       <ul class="tab-group">
         <li class="tab active"><a href="#signup">Sign Up</a></li>
         <li class="tab"><a href="#login">Log In</a></li>
@@ -23,7 +23,7 @@
       
       <div class="tab-content">
         <div id="signup">   
-          <h1>Sign Up for Free </h1>
+          <h1>Sign Up for Free <br>${message}</h1>
         <c:url var="action" value="login/registration" />
         <form:form action="${action}" method="post" commandName="user">
           <div class="top-row">

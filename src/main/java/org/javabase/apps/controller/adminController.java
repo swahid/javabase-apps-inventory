@@ -20,12 +20,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * 
  */
 @Controller
-public class showController {
+public class adminController {
     
     @Autowired
     UserService userservice;
 
-    @RequestMapping(value="/show", method=RequestMethod.GET)
+    @RequestMapping(value="/admin", method=RequestMethod.GET)
     public String index(ModelMap m){
         
         List <User> userList= userservice.selectUser();
@@ -34,7 +34,7 @@ public class showController {
         m.put("message", "Inventory Management System");
         m.put("user", user.getUserName());
         
-        return "showMessage";
+        return "admin";
         
     }
 }
