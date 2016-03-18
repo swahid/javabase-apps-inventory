@@ -12,13 +12,11 @@
         <title>Inventory Management System</title>
     </head> 
 <body>
-    <t:admin>
+    <t:login>
         <jsp:body>
-            <h1>Inventory Management System</h1>
-            <a href="<c:url value='/show'/>">click here</a>
-            <a href="<c:url value='/login'/>">Login Here</a>
+           <%@include file="login.jsp" %>
         </jsp:body>
-    </t:admin>
+    </t:login>
     
 </body>
 </html>

@@ -26,9 +26,9 @@
       
       <div class="tab-content">
         <div id="signup">   
-          <h1>Sign Up for Free</h1>
+          <h1>Sign Up for Free </h1>
           
-          <form action="/" method="post">
+          <form action="#" method="post">
           
           <div class="top-row">
             <div class="field-wrap">

@@ -27,6 +27,7 @@
   <mvc:resources location="/WEB-INF/resources/fonts/" mapping="fonts/**" />
   <mvc:resources location="/WEB-INF/resources/js/" mapping="js/**" />
   <mvc:resources location="/WEB-INF/resources/jQuery/" mapping="jQuery/**" />
+  <mvc:resources location="/WEB-INF/resources/template/" mapping="template/**" />
   
   
     <mvc:annotation-driven />
