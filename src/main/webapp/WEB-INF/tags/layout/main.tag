@@ -93,14 +93,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
-                  <img src="img/avatar.png" class="user-image" alt="User Image">
+                  <img src="img/avatar5.png" class="user-image" alt="User Image">
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
                   <span class="hidden-xs">Saurav Wahid</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
                   <li class="user-header">
-                    <img src="img/avatar.png" class="img-circle" alt="User Image">
+                    <img src="img/avatar5.png" class="img-circle" alt="User Image">
                     <p>
                       Saurav Wahid - Web Developer
                       <small>Member since MAR 2016</small>
@@ -142,7 +142,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="img/avatar.png" class="img-circle" alt="User Image">
+              <img src="img/avatar5.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
               <p>Saurav Wahid</p>
