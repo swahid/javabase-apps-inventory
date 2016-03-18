@@ -3,15 +3,20 @@
 
 <t:main>
     <jsp:attribute name="header">
-      <h1>Welcome</h1>
+      Welcome
     </jsp:attribute>
     <jsp:attribute name="sidebar">
       <h1>sidebar</h1>
     </jsp:attribute>
+    
+    
     <jsp:attribute name="footer">
-      <p id="copyright">Copyright 1927, Future Bits When There Be Bits Inc.</p>
+      <p id="copyright">Copyright @ 2016-2017 Javabase inCorporated </p>
+    </jsp:attribute>
+    <jsp:attribute name="contentheader">
+    <b>Admin Page</b>
     </jsp:attribute>
     <jsp:body>
-        <p>Hi I'm the heart of the message</p>
+        <p>main content area</p>
     </jsp:body>
 </t:main>

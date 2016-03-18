@@ -23,9 +23,10 @@
   <!--  Dispatcher configuration for serving static resources           -->
   <!-- **************************************************************** -->
   <mvc:resources location="/WEB-INF/resources/css/" mapping="css/**" />
-  <!--<mvc:resources location="/WEB-INF/template/images/" mapping="images/**" />
+  <mvc:resources location="/WEB-INF/template/images/" mapping="images/**" />
   <mvc:resources location="/WEB-INF/template/fonts/" mapping="fonts/**" />
-  <mvc:resources location="/WEB-INF/template/js/" mapping="js/**" /> -->
+  <mvc:resources location="/WEB-INF/template/js/" mapping="js/**" />
+  <mvc:resources location="/WEB-INF/template/plugins/" mapping="plugins/**" />
   
   
     <mvc:annotation-driven />
