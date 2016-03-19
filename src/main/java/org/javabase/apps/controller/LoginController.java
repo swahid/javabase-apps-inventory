@@ -35,7 +35,7 @@ public class LoginController {
     }
     
     @RequestMapping(method=RequestMethod.POST)
-    public String login(User user, ModelMap m){
+    public String login(ModelMap m, User user){
         
         List<User> userList=userservice.login(user);
         if (userList.size()>0) {
