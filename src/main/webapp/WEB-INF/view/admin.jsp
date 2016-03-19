@@ -9,7 +9,7 @@
         <jsp:body>
             <p>Hi ${user}</p>
             <p>Welcome to ${message}</p>
-            <a href="product">product page</a>
+            <a href="proCatagory">product page</a>
         </jsp:body>
     </t:admin>
 </body>

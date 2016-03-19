@@ -20,12 +20,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * 
  */
 @Controller
-public class productController {
+public class proController {
     
     @Autowired
     UserService userservice;
 
-    @RequestMapping(value="/product", method=RequestMethod.GET)
+    @RequestMapping(value="/proCatagory", method=RequestMethod.GET)
     public String product(ModelMap m){
         
         List <User> userList= userservice.selectUser();
@@ -34,7 +34,7 @@ public class productController {
         m.put("message", "Inventory Management System");
         m.put("user", user.getUserName());
         
-        return "product";
+        return "proCatagory";
         
     }
 }
