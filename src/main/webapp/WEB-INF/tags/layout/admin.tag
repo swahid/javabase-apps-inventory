@@ -106,18 +106,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <small>Member since MAR 2016</small>
                     </p>
                   </li>
-                  <!-- Menu Body -->
-                  <li class="user-body">
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
-                    </div>
-                  </li>
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
@@ -135,10 +123,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </header>
       <!-- Left side column. contains the logo and sidebar -->
       <aside class="main-sidebar">
-
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel">
             <div class="pull-left image">
