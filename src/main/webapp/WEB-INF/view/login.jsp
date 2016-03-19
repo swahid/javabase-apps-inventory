@@ -56,7 +56,7 @@
             <form:input path="password" />
           </div>
           
-          <button type="submit" class="button button-block"/>Get Started</button>
+          <button type="submit" class="button button-block">Get Started</button>
           
           </form:form>
 
@@ -84,7 +84,7 @@
           
           <p class="forgot"><a href="#">Forgot Password?</a></p>
           
-          <button type="submit" class="button button-block"/>Log In</button>
+          <button type="submit" class="button button-block">Log In</button>
           
           </form:form>
 
