@@ -40,10 +40,10 @@ public class LoginController {
         List<User> userList=userservice.login(user);
         if (userList.size()>0) {
             m.put("message", "login sucess ");
-            return "redirect:/admin";
+            return "redirect:/profile";
         }else {
             m.put("message", "login Fail");
-            return "redirect:/";
+            return "redirect:/profile";
             
         }
     }
