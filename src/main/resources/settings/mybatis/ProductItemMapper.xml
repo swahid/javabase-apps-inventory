@@ -1,0 +1,38 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- 
+    ================================================================================
+    @author     Saurav Wahid<saurav@medisys.com.sa>
+    @web        www.javabase.org
+    @version    1.0.1
+    @since      1.0.0
+    ================================================================================
+    -->
+<mapper namespace="org.javabase.apps.mapper.ProductItemMapper">
+
+    <resultMap id="list" type="ProductItem">
+        <result property="itemId"  column="item_id" />
+        <result property="itemCode"  column="item_code" />
+        <result property="itemDetails"  column="item_details" />
+    </resultMap>
+    
+    <select id="selectProductItem" resultMap="list">
+        select * from pro_item
+    </select>
+    
+    
+    <insert id="insert" parameterType="ProductItem">
+    INSERT INTO pro_item(
+        item_code,
+        item_details
+    )
+    values(
+        #{itemCode},
+        #{itemDetails}
+    )
+    </insert>
+    
+    
+</mapper>

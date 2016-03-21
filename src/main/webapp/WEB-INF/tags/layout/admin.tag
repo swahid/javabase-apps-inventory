@@ -150,7 +150,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <!-- Sidebar Menu -->
           <ul class="sidebar-menu">
-            <li class="active"><a href="proCatagory"><i class="fa fa-link"></i> <span>Product</span></a></li>
+            <li class="active"><a href="proCatagory"><i class="fa fa-link"></i> <span>Product Catagory</span></a></li>
+            <li class="active"><a href="productItem"><i class="fa fa-link"></i> <span>Product Item</span></a></li>
 <!--             <li class="treeview">
               <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">

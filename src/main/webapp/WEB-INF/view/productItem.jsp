@@ -25,19 +25,19 @@
 <body>
 	<t:admin>
 		<jsp:body>
-			<c:url var="action" value="proCatagory/addCatagory" />
+			<c:url var="action" value="productItem/addItem" />
        			<form:form action="${action}" method="post"
-							commandName="procatagory"  class="form-horizontal">
+							commandName="item"  class="form-horizontal">
 				  <div class="form-group">
-				    <label  class="col-sm-2 control-label">Catagory Code</label>
+				    <label  class="col-sm-2 control-label">Item Code</label>
 					    <div class="col-sm-4">
-					    	 <form:input path="cat_code" class="form-control"/>
+					    	 <form:input path="itemCode" class="form-control"/>
 					    </div>
 				  </div>
 				  <div class="form-group">
 					 <label class="col-sm-2 control-label">Details</label>
 					    <div class="col-sm-4">
-					     	<form:input path="cat_details" class="form-control" />
+					     	<form:input path="itemDetails" class="form-control" />
 					    </div>
 				  </div>
 	
@@ -48,24 +48,24 @@
 				  </div>
 			</form:form>
 			
-			<c:if test="${not empty catagoryList}">
+			<c:if test="${not empty productItes}">
 				<div class="table-responsive">
 					<table class="table table-bordered ">
 		
 						<thead>
 							<tr class="info">
 								<th>Sl No.</th>
-								<th>Catagory Code</th>
+								<th>Item Code</th>
 								<th>Details</th>
 							</tr>
 						</thead>
 		
 						<tbody>
-							<c:forEach var="catagory" items="${catagoryList}" varStatus="cataSl">
+							<c:forEach var="item" items="${productItes}" varStatus="itemSl">
 								<tr class="success">
-									<td>${cataSl.index+1}</td>
-									<td>${catagory.cat_code}</td>
-									<td>${catagory.cat_details}</td>
+									<td>${itemSl.index+1}</td>
+									<td>${item.itemCode}</td>
+									<td>${item.itemDetails}</td>
 								</tr>
 							</c:forEach>						
 						</tbody>
