@@ -28,6 +28,7 @@
   <mvc:resources location="/WEB-INF/resources/js/" mapping="js/**" />
   <mvc:resources location="/WEB-INF/resources/jQuery/" mapping="jQuery/**" />
   <mvc:resources location="/WEB-INF/resources/template/" mapping="template/**" />
+  <mvc:resources location="/WEB-INF/resources/plugins/" mapping="plugins/**" />
   
   
     <mvc:annotation-driven />
