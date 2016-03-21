@@ -1,0 +1,38 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- 
+    ================================================================================
+    @author     Saurav Wahid<saurav@medisys.com.sa>
+    @web        www.javabase.org
+    @version    1.0.1
+    @since      1.0.0
+    ================================================================================
+    -->
+<mapper namespace="org.javabase.apps.mapper.ProCatagoryMapper">
+
+    <resultMap id="list" type="ProCatagory">
+        <result property="proCatId"  column="cat_id" />
+        <result property="cat_code"  column="cat_code" />
+        <result property="cat_details"  column="cat_details" />
+    </resultMap>
+    
+    <select id="selectProCatagory" resultMap="list">
+        select * from pro_catagory
+    </select>
+    
+    
+    <insert id="insert" parameterType="ProCatagory">
+    INSERT INTO pro_catagory(
+        cat_code,
+        cat_details
+    )
+    values(
+        #{cat_code},
+        #{cat_details}
+    )
+    </insert>
+    
+    
+</mapper>

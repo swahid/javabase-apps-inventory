@@ -53,10 +53,10 @@
             <label>
               Set A Password<span class="req">*</span>
             </label>
-            <form:input path="password" />
+            <form:password path="password" />
           </div>
           
-          <button type="submit" class="button button-block"/>Get Started</button>
+          <button type="submit" class="button button-block">Get Started</button>
           
           </form:form>
 
@@ -79,12 +79,12 @@
             <label>
               Password<span class="req">*</span>
             </label>
-            <form:input path="password" />
+            <form:password path="password" />
           </div>
           
           <p class="forgot"><a href="#">Forgot Password?</a></p>
           
-          <button type="submit" class="button button-block"/>Log In</button>
+          <button type="submit" class="button button-block">Log In</button>
           
           </form:form>
 

@@ -3,9 +3,6 @@
  */
 package org.javabase.apps.controller;
 
-import java.util.List;
-
-import org.javabase.apps.entity.User;
 import org.javabase.apps.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,21 +17,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * 
  */
 @Controller
-public class proController {
+public class profileController {
     
     @Autowired
     UserService userservice;
 
-    @RequestMapping(value="/proCatagory", method=RequestMethod.GET)
-    public String product(ModelMap m){
+    @RequestMapping(value="/profile", method=RequestMethod.GET)
+    public String profile(ModelMap m){
         
-        List <User> userList= userservice.selectUser();
+//        List <User> userList= userservice.selectUser();
+//        
+//        User user=userList.get(0);
+//        m.put("message", "Inventory Management System");
+//        m.put("user", user.getUserName());
         
-        User user=userList.get(0);
-        m.put("message", "Inventory Management System");
-        m.put("user", user.getUserName());
-        
-        return "proCatagory";
+        return "profile";
         
     }
 }

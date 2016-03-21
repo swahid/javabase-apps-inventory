@@ -106,22 +106,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <small>Member since MAR 2016</small>
                     </p>
                   </li>
-                  <!-- Menu Body -->
-                  <li class="user-body">
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Followers</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Sales</a>
-                    </div>
-                    <div class="col-xs-4 text-center">
-                      <a href="#">Friends</a>
-                    </div>
-                  </li>
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="/ims" class="btn btn-default btn-flat">Profile</a>
+                      <a href="profile" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
                       <a href="/ims" class="btn btn-default btn-flat">Sign out</a>
@@ -135,10 +123,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </header>
       <!-- Left side column. contains the logo and sidebar -->
       <aside class="main-sidebar">
-
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel">
             <div class="pull-left image">
@@ -164,17 +150,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <!-- Sidebar Menu -->
           <ul class="sidebar-menu">
-            <li class="header">HEADER</li>
-            <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-            <li class="treeview">
+            <li class="active"><a href="proCatagory"><i class="fa fa-link"></i> <span>Product</span></a></li>
+<!--             <li class="treeview">
               <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="#">Link in level 2</a></li>
                 <li><a href="#">Link in level 2</a></li>
               </ul>
-            </li>
+            </li> -->
           </ul><!-- /.sidebar-menu -->
         </section>
         <!-- /.sidebar -->
@@ -185,8 +168,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Admin panel
-            <small>Optional description</small>
+            Dashboard
           </h1>
           <ol class="breadcrumb">
             <li><a href="/ims"><i class="fa fa-dashboard"></i> Home</a></li>
