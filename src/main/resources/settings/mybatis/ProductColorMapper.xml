@@ -1,0 +1,38 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- 
+    ================================================================================
+    @author     Saurav Wahid<saurav@medisys.com.sa>
+    @web        www.javabase.org
+    @version    1.0.1
+    @since      1.0.0
+    ================================================================================
+    -->
+<mapper namespace="org.javabase.apps.mapper.ProductColorMapper">
+
+    <resultMap id="list" type="ProductColor">
+        <result property="colourId"  column="col_id" />
+        <result property="colourCode"  column="col_code" />
+        <result property="colourName"  column="name" />
+    </resultMap>
+    
+    <select id="selectProductColor" resultMap="list">
+        select * from color
+    </select>
+    
+    
+    <insert id="insert" parameterType="ProductColor">
+    INSERT INTO color(
+        colourCode,
+        colourName
+    )
+    values(
+        #{col_code},
+        #{name}
+    )
+    </insert>
+    
+    
+</mapper>
