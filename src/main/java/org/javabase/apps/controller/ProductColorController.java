@@ -6,7 +6,8 @@ package org.javabase.apps.controller;
 import java.util.List;
 
 import org.javabase.apps.entity.ProCatagory;
-import org.javabase.apps.service.ProCatagoryService;
+import org.javabase.apps.entity.ProductColor;
+import org.javabase.apps.service.ProductColorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -25,28 +26,28 @@ import org.springframework.web.servlet.ModelAndView;
 public class ProductColorController {
     
     @Autowired
-    ProCatagoryService procatagoryservice;
+    ProductColorService productColorService;
 
     @RequestMapping(method=RequestMethod.GET)
     public ModelAndView product(ModelMap m,  ModelAndView mv){
     	
-//    	List<ProCatagory> catagories=procatagoryservice.selectProCatagory();
-        m.put("procatagory", new ProCatagory());
+    	List<ProductColor> productColorList=productColorService.selectProductColor();
+        m.put("color", new ProductColor());
         ModelAndView model = new ModelAndView("productColor");
-//		model.addObject("catagoryList", catagories);
+		model.addObject("colorList", productColorList);
         return model;
         
     }
     
-    @RequestMapping(value="addCatagory",method=RequestMethod.POST)
-    public String index(ProCatagory procatagory, ModelMap m){
+    @RequestMapping(value="addColor",method=RequestMethod.POST)
+    public String index(ProductColor productColor, ModelMap m){
     	
         
-        if (procatagoryservice.insert(procatagory)) {
-            m.put("message", "Add Catagory Success");
+        if (productColorService.insert(productColor)) {
+            m.put("message", "Add Color Success");
         }else {
-            m.put("message", "Add Catagory Fail");
+            m.put("message", "Add Color Fail");
         }
-        return "redirect:/proCatagory";
+        return "redirect:/productColor";
     }
 }

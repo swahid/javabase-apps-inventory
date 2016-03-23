@@ -14,27 +14,30 @@ public class ProductColor implements Serializable {
 	 */
 	private static final long serialVersionUID = 5435197560338126969L;
 	
-	private String colourId;
-	private String colourCode;
-	private String colourName;
-	public String getColourId() {
-		return colourId;
+	private String colorId;
+	private String colorCode;
+	private String colorName;
+	
+	
+	public String getColorId() {
+		return colorId;
 	}
-	public void setColourId(String colourId) {
-		this.colourId = colourId;
+	public void setColorId(String colorId) {
+		this.colorId = colorId;
 	}
-	public String getColourCode() {
-		return colourCode;
+	public String getColorCode() {
+		return colorCode;
 	}
-	public void setColourCode(String colourCode) {
-		this.colourCode = colourCode;
+	public void setColorCode(String colorCode) {
+		this.colorCode = colorCode;
 	}
-	public String getColourName() {
-		return colourName;
+	public String getColorName() {
+		return colorName;
 	}
-	public void setColourName(String colourName) {
-		this.colourName = colourName;
+	public void setColorName(String colorName) {
+		this.colorName = colorName;
 	}
+	
 	
 
 }

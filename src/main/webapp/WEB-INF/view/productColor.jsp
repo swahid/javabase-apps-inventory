@@ -27,17 +27,17 @@
 		<jsp:body>
 			<c:url var="action" value="productColor/addColor" />
        			<form:form action="${action}" method="post"
-							commandName="item"  class="form-horizontal">
+							commandName="color"  class="form-horizontal">
 				  <div class="form-group">
 				    <label  class="col-sm-2 control-label">Color Code</label>
 					    <div class="col-sm-4">
-					    	 <form:input path="itemCode" class="form-control"/>
+					    	 <form:input path="colorCode" class="form-control"/>
 					    </div>
 				  </div>
 				  <div class="form-group">
 					 <label class="col-sm-2 control-label">Color Name</label>
 					    <div class="col-sm-4">
-					     	<form:input path="itemDetails" class="form-control" />
+					     	<form:input path="colorName" class="form-control" />
 					    </div>
 				  </div>
 	
@@ -48,24 +48,24 @@
 				  </div>
 			</form:form>
 			
-			<c:if test="${not empty productItes}">
+			<c:if test="${not empty colorList}">
 				<div class="table-responsive">
 					<table class="table table-bordered ">
 		
 						<thead>
 							<tr class="info">
 								<th>Sl No.</th>
-								<th>Item Code</th>
-								<th>Details</th>
+								<th>Color Code</th>
+								<th>Color Name</th>
 							</tr>
 						</thead>
 		
 						<tbody>
-							<c:forEach var="item" items="${productItes}" varStatus="itemSl">
+							<c:forEach var="color" items="${colorList}" varStatus="itemSl">
 								<tr class="success">
 									<td>${itemSl.index+1}</td>
-									<td>${item.itemCode}</td>
-									<td>${item.itemDetails}</td>
+									<td>${color.colorCode}</td>
+									<td>${color.colorName}</td>
 								</tr>
 							</c:forEach>						
 						</tbody>

@@ -13,9 +13,9 @@
 <mapper namespace="org.javabase.apps.mapper.ProductColorMapper">
 
     <resultMap id="list" type="ProductColor">
-        <result property="colourId"  column="col_id" />
-        <result property="colourCode"  column="col_code" />
-        <result property="colourName"  column="name" />
+        <result property="colorId"  column="col_id" />
+        <result property="colorCode"  column="col_code" />
+        <result property="colorName"  column="name" />
     </resultMap>
     
     <select id="selectProductColor" resultMap="list">
@@ -25,12 +25,12 @@
     
     <insert id="insert" parameterType="ProductColor">
     INSERT INTO color(
-        colourCode,
-        colourName
+        col_code,
+        name
     )
     values(
-        #{col_code},
-        #{name}
+        #{colorCode},
+        #{colorName}
     )
     </insert>
     
