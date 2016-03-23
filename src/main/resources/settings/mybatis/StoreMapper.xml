@@ -1,0 +1,50 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- 
+    ================================================================================
+    @author     Saurav Wahid<saurav@medisys.com.sa>
+    @web        www.javabase.org
+    @version    1.0.1
+    @since      1.0.0
+    ================================================================================
+    -->
+<mapper namespace="org.javabase.apps.mapper.StoreMapper">
+
+    <resultMap id="list" type="Store">
+        <result property="storeId"     column="store_id" />
+        <result property="voutureNo"   column="vouture_no" />
+        <result property="product"     column="product" />
+        <result property="quantity"    column="quantity" />
+        <result property="unitPrice"   column="unite_price" />
+        <result property="salsePrice"  column="salse_price" />
+        <result property="topLess"     column="top_less" />
+    </resultMap>
+    
+    <select id="selectStore" resultMap="list">
+        select * from store
+    </select>
+    
+    
+    <insert id="insert" parameterType="Store">
+    INSERT INTO store(
+        vouture_no,
+        product,
+        quantity,
+        unite_price,
+        salse_price,
+        top_less
+    )
+    values(
+        #{voutureNo},
+        #{product},
+        #{quantity},
+        #{unitPrice},
+        #{salsePrice},
+        #{topLess}
+    )
+    </insert>
+    
+    
+</mapper>
