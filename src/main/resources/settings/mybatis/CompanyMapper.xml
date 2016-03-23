@@ -1,0 +1,42 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- 
+    ================================================================================
+  /**
+ * @author  Md. Rashedunnabi <rashedunnabi21@gmail.com>
+ * @verison	1.0.1
+ * @since	1.0.0
+ */
+    ================================================================================
+    -->
+<mapper namespace="org.javabase.apps.mapper.CompanyMapper">
+
+    <resultMap id="list" type="Company">
+        <result property="companyId"  column="com_id" />
+        <result property="companyCode"  column="com_code" />
+        <result property="companyName"  column="name" />
+        <result property="details"  column="details" />
+    </resultMap>
+    
+    <select id="selectCompany" resultMap="list">
+        select * from company
+    </select>
+    
+    
+    <insert id="insert" parameterType="Company">
+    INSERT INTO company(
+        com_code,
+        name,
+        details
+    )
+    values(
+        #{companyCode},
+        #{companyName},
+        #{details}
+    )
+    </insert>
+    
+    
+</mapper>
