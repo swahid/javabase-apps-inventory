@@ -1,0 +1,47 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- 
+    ================================================================================
+    @author     Saurav Wahid<saurav@medisys.com.sa>
+    @web        www.javabase.org
+    @version    1.0.1
+    @since      1.0.0
+    ================================================================================
+    -->
+<mapper namespace="org.javabase.apps.mapper.StockProductMapper">
+
+    <resultMap id="list" type="StockProduct">
+        <result property="stockId"     column="stock_id" />
+        <result property="product"     column="product" />
+        <result property="quantity"    column="quantity" />
+        <result property="unitPrice"   column="unit_price" />
+        <result property="salsePrice"  column="salse_price" />
+        <result property="topLess"     column="top_less" />
+    </resultMap>
+    
+    <select id="selectProductItem" resultMap="list">
+        select * from stock
+    </select>
+    
+    
+    <insert id="insert" parameterType="StockProduct">
+    INSERT INTO stock(
+        product,
+        quantity,
+        unit_price,
+        salse_price,
+        top_less
+    )
+    values(
+        #{product},
+        #{quantity},
+        #{unitPrice},
+        #{salsePrice},
+        #{topLess}
+    )
+    </insert>
+    
+    
+</mapper>
