@@ -7,9 +7,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author  Md. Rashedunnabi <rashedunnabi21@gmail.com>
- * @verison	1.0.1
- * @since	1.0.0
+ * @author      Md. Rashedunnabi <rashedunnabi21@gmail.com>
+ * @verison     1.0.1
+ * @since       1.0.0
  */
 public class SalseInvoice implements Serializable {
 
