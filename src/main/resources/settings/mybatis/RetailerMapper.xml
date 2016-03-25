@@ -1,0 +1,47 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- 
+    ================================================================================
+    @author     Saurav Wahid<saurav@medisys.com.sa>
+    @web        www.javabase.org
+    @version    1.0.1
+    @since      1.0.0
+    ================================================================================
+    -->
+<mapper namespace="org.javabase.apps.mapper.RetailerMapper">
+
+    <resultMap id="list" type="Retailer">
+        <result property="retrilerId"     column="retailer_id" />
+        <result property="storeName"      column="store_name" />
+        <result property="name"           column="name" />
+        <result property="contact"        column="contact" />
+        <result property="location"       column="location" />
+        <result property="date"           column="date" />
+    </resultMap>
+    
+    <select id="selectRetailer" resultMap="list">
+        select * from retailer
+    </select>
+    
+    
+    <insert id="insert" parameterType="Retailer">
+    INSERT INTO retailer(
+        store_name,
+        name,
+        contact,
+        location,
+        date
+    )
+    values(
+        #{storeName},
+        #{name},
+        #{contact},
+        #{location},
+        #{date}
+    )
+    </insert>
+    
+    
+</mapper>
