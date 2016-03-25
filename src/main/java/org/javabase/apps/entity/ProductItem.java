@@ -17,15 +17,16 @@ public class ProductItem implements Serializable {
 	 */
 	private static final long serialVersionUID = -6871697113242009534L;
 	
-	private String itemId;
+	private int itemId;
 	private String itemCode;
 	private String itemDetails;
 	
 	
-	public String getItemId() {
+
+	public int getItemId() {
 		return itemId;
 	}
-	public void setItemId(String itemId) {
+	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
 	public String getItemCode() {

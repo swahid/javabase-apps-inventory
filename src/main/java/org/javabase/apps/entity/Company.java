@@ -17,16 +17,17 @@ public class Company implements Serializable {
 	 */
 	private static final long serialVersionUID = 3843827811010295738L;
 	
-	private String companyId;
+	private int companyId;
 	private String companyCode;
 	private String companyName;
 	private String details;
 	
 	
-	public String getCompanyId() {
+
+	public int getCompanyId() {
 		return companyId;
 	}
-	public void setCompanyId(String companyId) {
+	public void setCompanyId(int companyId) {
 		this.companyId = companyId;
 	}
 	public String getCompanyCode() {

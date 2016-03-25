@@ -19,7 +19,7 @@ public class SalseInvoice implements Serializable {
 	private static final long serialVersionUID = -3505742126161813761L;
 	
 	
-	private String salId;
+	private int salId;
 	private String invoice;
 	private String product;
 	private int quantity;
@@ -29,10 +29,11 @@ public class SalseInvoice implements Serializable {
 	private Date dateTime;
 	
 	
-	public String getSalId() {
+
+	public int getSalId() {
 		return salId;
 	}
-	public void setSalId(String salId) {
+	public void setSalId(int salId) {
 		this.salId = salId;
 	}
 	public String getInvoice() {

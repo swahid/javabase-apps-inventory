@@ -14,15 +14,16 @@ public class ProductColor implements Serializable {
 	 */
 	private static final long serialVersionUID = 5435197560338126969L;
 	
-	private String colorId;
+	private int colorId;
 	private String colorCode;
 	private String colorName;
 	
 	
-	public String getColorId() {
+
+	public int getColorId() {
 		return colorId;
 	}
-	public void setColorId(String colorId) {
+	public void setColorId(int colorId) {
 		this.colorId = colorId;
 	}
 	public String getColorCode() {

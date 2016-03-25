@@ -17,16 +17,17 @@ public class StockProduct implements Serializable {
 	 */
 	private static final long serialVersionUID = 8758178986479916904L;
 	
-	private String stockId;
+	private int stockId;
 	private String product;
 	private int quantity;
 	private double unitPrice;
 	private double salsePrice;
 	private double topLess;
-	public String getStockId() {
+
+	public int getStockId() {
 		return stockId;
 	}
-	public void setStockId(String stockId) {
+	public void setStockId(int stockId) {
 		this.stockId = stockId;
 	}
 	public String getProduct() {
