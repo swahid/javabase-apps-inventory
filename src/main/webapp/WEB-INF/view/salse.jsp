@@ -35,12 +35,6 @@
        			<form:form action="${action}" method="post"
 							commandName="salse"  class="form-horizontal">
 				  <div class="form-group">
-				    <label  class="col-sm-2 control-label">Invoice</label>
-					    <div class="col-sm-4">
-					    	 <form:input path="invoice" class="form-control"/>
-					    </div>
-				  </div>
-				  <div class="form-group">
 					 <label class="col-sm-2 control-label">Product</label>
 					    <div class="col-sm-4">
 					     	<form:input path="product" class="form-control" />
