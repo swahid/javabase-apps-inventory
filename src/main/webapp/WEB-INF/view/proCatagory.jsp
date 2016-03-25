@@ -73,6 +73,60 @@
                     </table>
                 </div>
             </c:if>
+        <jsp:body>
+                    <center>
+                            <div class="page-header">
+                                  <h1>Add New Catagory</h1>
+                            </div>
+                    </center>
+            <c:url var="action" value="proCatagory/addCatagory" />
+                   <form:form action="${action}" method="post"
+                            commandName="procatagory"  class="form-horizontal">
+                  <div class="form-group">
+                    <label  class="col-sm-2 control-label">Catagory Code</label>
+                        <div class="col-sm-4">
+                             <form:input path="cat_code" class="form-control"/>
+                        </div>
+                  </div>
+                  <div class="form-group">
+                     <label class="col-sm-2 control-label">Details</label>
+                        <div class="col-sm-4">
+                             <form:input path="cat_details" class="form-control" />
+                        </div>
+                  </div>
+    
+                  <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-2">
+                          <button type="submit" class="btn btn-primary btn-sm btn-block">Add</button>
+                    </div>
+                  </div>
+            </form:form>
+            
+            <c:if test="${not empty catagoryList}">
+                <div class="table-responsive">
+                    <table class="table table-bordered ">
+        
+                        <thead>
+                            <tr class="info">
+                                <th>Sl No.</th>
+                                <th>Catagory Code</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+        
+                        <tbody>
+                            <c:forEach var="catagory" items="${catagoryList}" varStatus="cataSl">
+                                <tr class="success">
+                                    <td>${cataSl.index+1}</td>
+                                    <td>${catagory.cat_code}</td>
+                                    <td>${catagory.cat_details}</td>
+                                </tr>
+                            </c:forEach>                        
+                        </tbody>
+        
+                    </table>
+                </div>
+            </c:if>
         </jsp:body>
     </t:admin>
 </body>

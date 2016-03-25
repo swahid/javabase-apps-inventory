@@ -25,6 +25,12 @@
 <body>
 	<t:admin>
 		<jsp:body>
+		
+					<center>
+							<div class="page-header">
+							 	 <h1>Product Salse</h1>
+							</div>
+					</center>
 			<c:url var="action" value="salse/addInvoice" />
        			<form:form action="${action}" method="post"
 							commandName="salse"  class="form-horizontal">

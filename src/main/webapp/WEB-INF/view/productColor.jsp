@@ -25,6 +25,11 @@
 <body>
 	<t:admin>
 		<jsp:body>
+					<center>
+							<div class="page-header">
+							 	 <h1>Add New Color Of Product</h1>
+							</div>
+					</center>
 			<c:url var="action" value="productColor/addColor" />
        			<form:form action="${action}" method="post"
 							commandName="color"  class="form-horizontal">

@@ -25,6 +25,11 @@
 <body>
 	<t:admin>
 		<jsp:body>
+					<center>
+							<div class="page-header">
+							 	 <h1>Add New Product In Short </h1>
+							</div>
+					</center>
 			<c:url var="action" value="retail/addRetail" />
        			<form:form action="${action}" method="post"
 							commandName="retail"  class="form-horizontal">

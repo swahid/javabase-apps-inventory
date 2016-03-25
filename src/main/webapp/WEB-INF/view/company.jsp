@@ -25,6 +25,11 @@
 <body>
 	<t:admin>
 		<jsp:body>
+				<center>
+							<div class="page-header">
+							 	 <h1> All New Company</h1>
+							</div>
+					</center>
 			<c:url var="action" value="company/addCompany" />
        			<form:form action="${action}" method="post"
 							commandName="company"  class="form-horizontal">
