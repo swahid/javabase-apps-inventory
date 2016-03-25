@@ -158,6 +158,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="active"><a href="stock"><i class="fa fa-link"></i> <span>Add New Stock`</span></a></li>
             <li class="active"><a href="salse"><i class="fa fa-link"></i> <span>Salse`</span></a></li>
             <li class="active"><a href="retailer"><i class="fa fa-link"></i> <span>Retailer`</span></a></li>
+            <li class="active"><a href="retail"><i class="fa fa-link"></i> <span>Retail Product</span></a></li>
 <!--             <li class="treeview">
               <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">

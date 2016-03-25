@@ -1,0 +1,46 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- 
+    ================================================================================
+    @author     Saurav Wahid<saurav@medisys.com.sa>
+    @web        www.javabase.org
+    @version    1.0.1
+    @since      1.0.0
+    ================================================================================
+    -->
+<mapper namespace="org.javabase.apps.mapper.RetailInfoMapper">
+
+    <resultMap id="list" type="RetailInfo">
+        <result property="retailId"      column="retail_id" />
+        <result property="contact"       column="contact" />
+        <result property="voutureNo"     column="vouture_no" />
+        <result property="quantity"      column="quantity" />
+        <result property="totalAmount"   column="total_amount" />
+        <result property="pay"           column="pay" />
+    </resultMap>
+    
+    <select id="selectRetailInfo" resultMap="list">
+        select * from retiail_info
+    </select>
+    
+    <insert id="insert" parameterType="RetailInfo">
+    INSERT INTO retiail_info(
+        contact,
+        vouture_no,
+        quantity,
+        total_amount,
+        pay
+    )
+    values(
+        #{contact},
+        #{voutureNo},
+        #{quantity},
+        #{totalAmount},
+        #{pay}
+    )
+    </insert>
+    
+    
+</mapper>
