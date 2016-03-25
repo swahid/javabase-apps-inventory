@@ -5,7 +5,9 @@ package org.javabase.apps.controller;
 
 import java.util.List;
 
+import org.javabase.apps.entity.RetailInfo;
 import org.javabase.apps.entity.Store;
+import org.javabase.apps.service.RetailInfoService;
 import org.javabase.apps.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,14 +28,20 @@ public class StoreController {
     
     @Autowired
     StoreService storeService;
+    
+    @Autowired
+    RetailInfoService retailInfoService;
 
     @RequestMapping(method=RequestMethod.GET)
     public ModelAndView product(ModelMap m,  ModelAndView mv){
     	
     	List<Store> storeList=storeService.selectStore();
+    	
+    	List<RetailInfo> voutureList=retailInfoService.selectRetailInfo();
         m.put("store", new Store());
         ModelAndView model = new ModelAndView("store");
 		model.addObject("storeList", storeList);
+		model.addObject("voutureList", voutureList);
         return model;
         
     }

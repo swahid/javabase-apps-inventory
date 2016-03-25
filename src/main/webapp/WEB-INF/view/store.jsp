@@ -28,12 +28,18 @@
 			<c:url var="action" value="store/addProduct" />
        			<form:form action="${action}" method="post"
 							commandName="store"  class="form-horizontal">
-				  <div class="form-group">
-				    <label  class="col-sm-2 control-label">Vouture No</label>
+			  	<div class="form-group">
+					 <label class="col-sm-2 control-label">Vouture No</label>
 					    <div class="col-sm-4">
-					    	 <form:input path="voutureNo" class="form-control"/>
-					    </div>
-				  </div>
+						<form:select path="voutureNo"  class="form-control">
+							<form:option value="0" label="--Select One--" />
+							<c:forEach var="voutures" items="${voutureList}">
+								<form:option value="${voutures.voutureNo}"
+									label="${voutures.contact}" />
+							</c:forEach>
+						</form:select>
+					</div>
+				</div>
 				  <div class="form-group">
 					 <label class="col-sm-2 control-label">Product</label>
 					    <div class="col-sm-4">
