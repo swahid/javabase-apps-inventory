@@ -25,7 +25,12 @@
 <body>
 	<t:admin>
 		<jsp:body>
-			<c:url var="action" value="stock/addStock" />
+					<center>
+							<div class="page-header">
+							 	 <h1>View All Product</h1>
+							</div>
+					</center>
+			<%-- <c:url var="action" value="stock/addStock" />
        			<form:form action="${action}" method="post"
 							commandName="stock"  class="form-horizontal">
 				  <div class="form-group">
@@ -64,7 +69,7 @@
 				      	<button type="submit" class="btn btn-primary btn-sm btn-block">Add</button>
 				    </div>
 				  </div>
-			</form:form>
+			</form:form> --%>
 			
 			<c:if test="${not empty stockList}">
 				<div class="table-responsive">

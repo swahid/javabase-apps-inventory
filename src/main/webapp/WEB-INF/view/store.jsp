@@ -25,6 +25,11 @@
 <body>
 	<t:admin>
 		<jsp:body>
+		<center>
+			<div class="page-header">
+			 	 <h1>Store New Product</h1>
+			</div>
+		</center>
 			<c:url var="action" value="store/addProduct" />
        			<form:form action="${action}" method="post"
 							commandName="store"  class="form-horizontal">
@@ -40,11 +45,54 @@
 						</form:select>
 					</div>
 				</div>
-				  <div class="form-group">
-					 <label class="col-sm-2 control-label">Product</label>
+			  	<div class="form-group">
+					 <label class="col-sm-2 control-label">Company</label>
 					    <div class="col-sm-4">
-					     	<form:input path="product" class="form-control" />
-					    </div>
+						<form:select path="companyCode"  class="form-control">
+							<form:option value="0" label="--Select One--" />
+							<c:forEach var="company" items="${companyList}">
+								<form:option value="${company.companyCode}"
+									label="${company.companyName}" />
+							</c:forEach>
+						</form:select>
+					</div>
+				</div>
+			  	<div class="form-group">
+					 <label class="col-sm-2 control-label">Catagory </label>
+					    <div class="col-sm-4">
+						<form:select path="cat_code"  class="form-control">
+							<form:option value="0" label="--Select One--" />
+							<c:forEach var="catagory" items="${catagoryList}">
+								<form:option value="${catagory.cat_code}"
+									label="${catagory.cat_details}" />
+							</c:forEach>
+						</form:select>
+					</div>
+				</div>
+				  	<div class="form-group">
+						 <label class="col-sm-2 control-label">Product Item </label>
+						    <div class="col-sm-4">
+							<form:select path="itemCode"  class="form-control">
+								<form:option value="0" label="--Select One--" />
+								<c:forEach var="item" items="${productIteList}">
+									<form:option value="${item.itemCode}"
+										label="${item.itemDetails}" />
+								</c:forEach>
+							</form:select>
+						</div>
+					</div>
+				
+			  	  <div class="form-group">
+					 <label class="col-sm-2 control-label">Product Color </label>
+					    <div class="col-sm-4">
+						<form:select path="colorCode"  class="form-control">
+							<form:option value="0" label="--Select One--" />
+							<c:forEach var="color" items="${productColorList}">
+								<form:option value="${color.colorCode}"
+									label="${color.colorName}" />
+							</c:forEach>
+						</form:select>
+					</div>
 				  </div>
 				  <div class="form-group">
 					 <label class="col-sm-2 control-label">Quantity</label>
@@ -85,8 +133,11 @@
 						<thead>
 							<tr class="info">
 								<th>Sl No.</th>
-								<th>Color Code</th>
-								<th>Color Name</th>
+								<th>Product Code</th>
+								<th>Quantity</th>
+								<th>Unit Price</th>
+								<th>Salse Price</th>
+								<th>Top Less</th>
 							</tr>
 						</thead>
 		
@@ -94,8 +145,11 @@
 							<c:forEach var="store" items="${storeList}" varStatus="itemSl">
 								<tr class="success">
 									<td>${itemSl.index+1}</td>
-									<td>${store.voutureNo}</td>
+									<td>${store.product}</td>
+									<td>${store.quantity}</td>
 									<td>${store.unitPrice}</td>
+									<td>${store.salsePrice}</td>
+									<td>${store.topLess}</td>
 								</tr>
 							</c:forEach>						
 						</tbody>

@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @verison	1.0.1
  * @since	1.0.0
  */
-public class Store implements Serializable {
+public class Store extends BaseEntity implements Serializable {
 
 	/**
 	 * 
