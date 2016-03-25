@@ -8,7 +8,6 @@
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
     
     <link rel="stylesheet" href="css/login/normalize.css">
-
     
         <link rel="stylesheet" href="css/login/style.css">
   </head>
@@ -46,14 +45,14 @@
             <label>
               User Name<span class="req">*</span>
             </label>
-            <form:input path="userName" />
+            <form:input path="userName" required="required"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Set A Password<span class="req">*</span>
             </label>
-            <form:password path="password" />
+            <form:password path="password" required="required"/>
           </div>
           
           <button type="submit" class="button button-block">Get Started</button>
@@ -72,14 +71,14 @@
             <label>
               User Name<span class="req">*</span>
             </label>
-            <form:input path="userName" />
+            <form:input path="userName" required="required"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <form:password path="password" />
+            <form:password path="password" required="required"/>
           </div>
           
           <p class="forgot"><a href="#">Forgot Password?</a></p>
