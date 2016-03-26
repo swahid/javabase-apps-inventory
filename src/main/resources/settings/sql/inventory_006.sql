@@ -96,6 +96,29 @@ CREATE TABLE `customer` (
 
 
 --
+-- Definition of table `invoice`
+--
+
+DROP TABLE IF EXISTS `invoice`;
+CREATE TABLE `invoice` (
+  `invoice_no` int(10) unsigned NOT NULL,
+  `product` varchar(45) character set latin1 default NULL,
+  `date` datetime default NULL,
+  `seller_id` varchar(45) default NULL,
+  `customer_name` varchar(45) default NULL,
+  `customer_phone` int(10) unsigned default NULL,
+  PRIMARY KEY  (`invoice_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `invoice`
+--
+
+/*!40000 ALTER TABLE `invoice` DISABLE KEYS */;
+/*!40000 ALTER TABLE `invoice` ENABLE KEYS */;
+
+
+--
 -- Definition of table `pro_catagory`
 --
 
@@ -201,54 +224,29 @@ INSERT INTO `retiail_info` (`retail_id`,`contact`,`vouture_no`,`quantity`,`total
 
 
 --
--- Definition of table `sales_details`
+-- Definition of table `sales`
 --
 
-DROP TABLE IF EXISTS `sales_details`;
-CREATE TABLE `sales_details` (
+DROP TABLE IF EXISTS `sales`;
+CREATE TABLE `sales` (
   `sales_id` int(10) unsigned NOT NULL auto_increment,
-  `invoice_id` varchar(45) default NULL,
+  `invoice_no` int(10) unsigned default NULL,
   `product` varchar(45) default NULL,
   `quantity` varchar(45) default NULL,
   `unit_price` varchar(45) default NULL,
   `sales_price` varchar(45) default NULL,
   `discount` varchar(45) default NULL,
-  PRIMARY KEY  USING BTREE (`sales_id`)
+  PRIMARY KEY  USING BTREE (`sales_id`),
+  KEY `FK_invoice_no` (`invoice_no`),
+  CONSTRAINT `FK_invoice_no` FOREIGN KEY (`invoice_no`) REFERENCES `invoice` (`invoice_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `sales_details`
+-- Dumping data for table `sales`
 --
 
-/*!40000 ALTER TABLE `sales_details` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sales_details` ENABLE KEYS */;
-
-
---
--- Definition of table `sales_invoice`
---
-
-DROP TABLE IF EXISTS `sales_invoice`;
-CREATE TABLE `sales_invoice` (
-  `sales_id` int(10) unsigned NOT NULL auto_increment,
-  `invoiceId` varchar(20) default NULL,
-  `product` varchar(45) character set latin1 default NULL,
-  `quantity` int(11) default NULL,
-  `discount` double default NULL,
-  `date` datetime default NULL,
-  `unit_price` double default NULL,
-  `sales_price` double default NULL,
-  `seller` varchar(45) default NULL,
-  `customer` varchar(45) default NULL,
-  PRIMARY KEY  USING BTREE (`sales_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `sales_invoice`
---
-
-/*!40000 ALTER TABLE `sales_invoice` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sales_invoice` ENABLE KEYS */;
+/*!40000 ALTER TABLE `sales` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sales` ENABLE KEYS */;
 
 
 --
