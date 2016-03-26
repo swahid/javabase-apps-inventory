@@ -17,8 +17,6 @@
     href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <!-- Theme style -->
 <link rel="stylesheet" href="css/AdminLTE.min.css">
-<!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="css/skins/_all-skins.min.css">
 
 </head>
@@ -27,12 +25,12 @@
         <jsp:body>
             <center>
                     <div class="page-header">
-                          <h1>Product Salse</h1>
+                          <h1>Product sales</h1>
                     </div>
             </center>
             <div class="row">
-            <c:url var="action" value="salse/addInvoice" />
-            <form:form action="${action}" method="post" commandName="salse"  class="form-vertical">
+            <c:url var="action" value="sales/addInvoice" />
+            <form:form action="${action}" method="post" commandName="sales"  class="form-vertical">
                   <div class="form-group">
                      <label class="col-sm-2 control-label">Product</label>
                         <div class="col-sm-4">
@@ -53,12 +51,10 @@
                         <thead>
                             <tr class="info">
                                 <th>Sl No.</th>
-                                <th>Invoice</th>
-                                <th>Product</th>
+                                <th>Product ID</th>
+                                <th>Product Name</th>
                                 <th>Quantity</th>
-                                <th>Unite Price</th>
-                                <th>Salse Price</th>
-                                <th>Discout</th>
+                                <th>Price</th>
                             </tr>
                         </thead>
                         <c:if test="${not empty invoiceList}">
@@ -66,12 +62,10 @@
                             <c:forEach var="invoice" items="${invoiceList}" varStatus="itemSl">
                                 <tr class="success">
                                     <td>${itemSl.index+1}</td>
-                                    <td>${invoice.invoice}</td>
+                                    <td>${invoice.productId}</td>
+                                    <td>${invoice.productName}</td>
                                     <td>${invoice.quantity}</td>
-                                    <td>${invoice.product}</td>
-                                    <td>${invoice.unitPrice}</td>
-                                    <td>${invoice.salsePrice}</td>
-                                    <td>${invoice.discount}</td>
+                                    <td>${invoice.salesPrice}</td>
                                 </tr>
                             </c:forEach>
                         </tbody>

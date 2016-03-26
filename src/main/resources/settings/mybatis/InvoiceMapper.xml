@@ -1,0 +1,48 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- 
+    ================================================================================
+    @author     Saurav Wahid<saurav1161@gmail.com>
+    @web        www.javabase.org
+    @version    1.0.1
+    @since      1.0.0
+    ================================================================================
+    -->
+<mapper namespace="org.javabase.apps.mapper.InvoiceMapper">
+
+    <resultMap id="list" type="Invoice">
+        <result property="invoice"     column="invoice_no" />
+        <result property="product"     column="product_id" />
+        <result property="salesDate"    column="date" />
+        <result property="sellerId"    column="seller_id" />
+        <result property="customerName"    column="customer_name" />
+        <result property="customerNo"    column="customer_phone" />
+    </resultMap>
+    
+    <select id="selectAll" resultMap="list">
+        select * from invoice
+    </select>
+    
+    <insert id="insert" parameterType="Invoice">
+    INSERT INTO salse_invoice(
+        product,
+        product_id,
+        seller_id,
+        customer_name,
+        customer_phone,
+        date
+    )
+    values(
+        #{product},
+        #{product},
+        #{sellerId},
+        #{customerName},
+        #{customerNo},
+        SYSDATE
+    )
+    </insert>
+    
+    
+</mapper>

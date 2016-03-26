@@ -5,11 +5,7 @@ package org.javabase.apps.controller;
 
 import java.util.List;
 
-import org.javabase.apps.entity.ProCatagory;
-import org.javabase.apps.entity.ProductItem;
 import org.javabase.apps.entity.StockProduct;
-import org.javabase.apps.service.ProCatagoryService;
-import org.javabase.apps.service.ProductItemService;
 import org.javabase.apps.service.StockProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

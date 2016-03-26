@@ -138,19 +138,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
 
           <!-- search form (Optional) -->
-          <form action="#" method="get" class="sidebar-form">
+<!--           <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
               <input type="text" name="q" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
               </span>
             </div>
-          </form>
+          </form> -->
           <!-- /.search form -->
 
           <!-- Sidebar Menu -->
           <ul class="sidebar-menu">
-            <li class="active"><a href="salse"><i class="fa fa-link"></i> <span>Product Salse</span></a></li>
+            <li class="active"><a href="sales"><i class="fa fa-link"></i> <span>Product Salse</span></a></li>
             <li class="active"><a href="store"><i class="fa fa-link"></i> <span>Add New Product</span></a></li>
             <li class="active"><a href="stock"><i class="fa fa-link"></i> <span>View  Stock</span></a></li>
             <li class="active"><a href="retail"><i class="fa fa-link"></i> <span>Retail Product</span></a></li>

@@ -6,7 +6,6 @@ package org.javabase.apps.controller;
 import java.util.List;
 
 import org.javabase.apps.entity.RetailInfo;
-import org.javabase.apps.entity.SalseInvoice;
 import org.javabase.apps.service.RetailInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

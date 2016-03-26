@@ -6,9 +6,7 @@ package org.javabase.apps.controller;
 import java.util.List;
 
 import org.javabase.apps.entity.Company;
-import org.javabase.apps.entity.ProductColor;
 import org.javabase.apps.service.CompanyService;
-import org.javabase.apps.service.ProductColorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

@@ -5,7 +5,6 @@ package org.javabase.apps.controller;
 
 import java.util.List;
 
-import org.javabase.apps.entity.ProCatagory;
 import org.javabase.apps.entity.ProductColor;
 import org.javabase.apps.service.ProductColorService;
 import org.springframework.beans.factory.annotation.Autowired;

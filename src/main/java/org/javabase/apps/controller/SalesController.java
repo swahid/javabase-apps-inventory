@@ -5,9 +5,8 @@ package org.javabase.apps.controller;
 
 import java.util.List;
 
-import org.javabase.apps.entity.SalseInvoice;
-import org.javabase.apps.service.SalseInvoiceService;
-import org.javabase.apps.service.StockProductService;
+import org.javabase.apps.entity.Invoice;
+import org.javabase.apps.service.InvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,28 +21,27 @@ import org.springframework.web.servlet.ModelAndView;
  * 
  */
 @Controller
-@RequestMapping(value="/salse")
-public class SalseInvoiceController {
+@RequestMapping(value="/sales")
+public class SalesController {
     
     @Autowired
-    SalseInvoiceService salseInvoiceService;
+    InvoiceService invoiceService;
 
     @RequestMapping(method=RequestMethod.GET)
-    public ModelAndView product(ModelMap m,  ModelAndView mv){
-    	
-    	List<SalseInvoice> invoiceList=salseInvoiceService.selectSalseInvoice();
-        m.put("salse", new SalseInvoice());
-        ModelAndView model = new ModelAndView("salse");
-		model.addObject("invoiceList", invoiceList);
+    public ModelAndView sales(ModelMap m,  ModelAndView mv){
+        
+        List<Invoice> invoiceList=invoiceService.selectAll();
+        m.put("sales", new Invoice());
+        ModelAndView model = new ModelAndView("sales");
+        model.addObject("invoiceList", invoiceList);
         return model;
         
     }
     
     @RequestMapping(value="addInvoice",method=RequestMethod.POST)
-    public String index(SalseInvoice salseInvoice, ModelMap m){
-    	
+    public String index(Invoice invoice, ModelMap m){
         
-        if (salseInvoiceService.insert(salseInvoice)) {
+        if (invoiceService.insert(invoice)) {
             m.put("message", "Add  Success");
         }else {
             m.put("message", "Add  Fail");
