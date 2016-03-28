@@ -23,7 +23,28 @@
         $("#saleForm").submit(function(event){
             
             event.preventDefault();
-            console.log($("#productId").val());
+            var data = {}
+                data["product"] = $("#productId").val(),
+                url ="sales/searchInvoice";
+            
+            $.ajax({
+                type        : "POST",
+                contentType : "application/json",
+                url     : url,
+                data    : JSON.stringify(data),
+                dataType: 'json',
+                success : function(data) {
+                    console.log("SUCCESS: ", data);
+                        $("#productTable").append(data.product);
+                },
+                error : function(e) {
+                    console.log("ERROR: ", e);
+                },
+                done : function(e) {
+                    console.log("DONE");
+                }
+            });
+            
         });
     });
 </script>
@@ -38,12 +59,12 @@
                     </div>
             </center>
             <div class="row">
-            <c:url var="action" value="sales/searchInvoice" />
-            <form:form action="${action}" method="post" id="saleForm" commandName="stock"  class="form-vertical" accept-charset="utf-8">
+            
+            <form method="post" id="saleForm" class="form-vertical" accept-charset="utf-8">
                   <div class="form-group">
                      <label class="col-sm-2 control-label">Product</label>
                         <div class="col-sm-4">
-                             <form:input path="product" id="productId" class="form-control" required="required"/>
+                             <input id="productId" class="form-control" required="required"/>
                         </div>
                   </div>
                   <div class="form-group">
@@ -51,12 +72,12 @@
                           <input type="submit" id="addProduct" value="Add" class="btn btn-primary btn-sm btn-block" />
                     </div>
                   </div>
-            </form:form>
+            </form>
             </div>
                 <div class="row">
                  <div class="col-xs-12">
                 <div class="box-body no-padding">
-                    <table class="table table-striped">
+                    <table id="productTable" class="table table-striped">
                         <thead>
                             <tr class="info">
                                 <th>Sl No.</th>
@@ -66,19 +87,15 @@
                                 <th>Price</th>
                             </tr>
                         </thead>
-                        <c:if test="${not empty invoiceList}">
                         <tbody>
-                            <c:forEach var="invoice" items="${addproduct}" varStatus="itemSl">
-                                <tr class="success">
-                                    <td>${itemSl.index+1}</td>
-                                    <td>${addproduct.productId}</td>
-                                    <td>${productName}</td>
-                                    <td>${quantity}</td>
-                                    <td>${addproduct.salesPrice}</td>
-                                </tr>
-                            </c:forEach>
+	                        <tr class="success">
+	                            <td>${index+1}</td>
+	                            <td>${data.productId}</td>
+	                            <td>${data.productName}</td>
+	                            <td>${data.quantity}</td>
+	                            <td>${data.salesPrice}</td>
+	                        </tr>
                         </tbody>
-                      </c:if>
                     </table>
                 </div>
                 </div>
