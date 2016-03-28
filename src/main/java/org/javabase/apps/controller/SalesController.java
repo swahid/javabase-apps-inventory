@@ -5,8 +5,9 @@ package org.javabase.apps.controller;
 
 import java.util.List;
 
-import org.javabase.apps.entity.Invoice;
+import org.javabase.apps.entity.StockProduct;
 import org.javabase.apps.service.InvoiceService;
+import org.javabase.apps.service.StockProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -26,26 +27,25 @@ public class SalesController {
     
     @Autowired
     InvoiceService invoiceService;
+    
+    @Autowired
+    StockProductService stockService;
 
     @RequestMapping(method=RequestMethod.GET)
-    public ModelAndView sales(ModelMap m,  ModelAndView mv){
-        
-        List<Invoice> invoiceList=invoiceService.selectAll();
-        m.put("sales", new Invoice());
+    public ModelAndView sales(ModelAndView mv){
         ModelAndView model = new ModelAndView("sales");
-        model.addObject("invoiceList", invoiceList);
-        return model;
+        model.addObject("stock", new StockProduct());
         
+        return model;
     }
     
-    @RequestMapping(value="addInvoice",method=RequestMethod.POST)
-    public String index(Invoice invoice, ModelMap m){
-        
-        if (invoiceService.insert(invoice)) {
-            m.put("message", "Add  Success");
-        }else {
-            m.put("message", "Add  Fail");
+    @RequestMapping(value="searchInvoice",method=RequestMethod.POST)
+    public String index( StockProduct stockProduct, ModelMap m){
+        ModelAndView model = new ModelAndView("sales");
+        List<StockProduct> stockList = stockService.selectProduct(stockProduct);
+        if (stockList.size()>0) {
+            model.addObject("addproduct", stockList);
         }
-        return "redirect:/salse";
+        return "redirect:/sales";
     }
 }

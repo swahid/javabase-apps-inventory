@@ -25,6 +25,10 @@
         select * from stock
     </select>
     
+    <select id="selectProduct" resultMap="list" parameterType="StockProduct">
+        select * from stock where product = #{product}
+    </select>
+    
     
     <insert id="insert" parameterType="StockProduct">
     INSERT INTO stock(

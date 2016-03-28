@@ -14,6 +14,8 @@ import org.javabase.apps.entity.StockProduct;
 public interface StockProductService {
     
 	 public List<StockProduct> selectProductItem();
+	 
+	 public List<StockProduct> selectProduct(StockProduct stockProduct);
 	    
 	 public boolean insert(StockProduct stockProduct);
 }

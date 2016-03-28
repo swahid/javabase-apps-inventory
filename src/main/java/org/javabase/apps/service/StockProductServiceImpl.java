@@ -12,24 +12,29 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @author  Md. Rashedunnabi <rashedunnabi21@gmail.com>
- * @verison	1.0.1
- * @since	1.0.0
+ * @author      Md. Rashedunnabi <rashedunnabi21@gmail.com>
+ * @verison     1.0.1
+ * @since       1.0.0
  */
 @Service
 public class StockProductServiceImpl implements StockProductService {
-	
-	@Autowired
-	StockProductMapper stockProductMapper;
+    
+    @Autowired
+    StockProductMapper stockProductMapper;
 
-	 @Transactional(readOnly=true)
-	public List<StockProduct> selectProductItem() {
-		return stockProductMapper.selectProductItem();
-	}
+     @Transactional(readOnly=true)
+    public List<StockProduct> selectProductItem() {
+        return stockProductMapper.selectProductItem();
+    }
 
-	@Transactional
-	public boolean insert(StockProduct stockProduct) {
-		return stockProductMapper.insert(stockProduct);
-	}
+    @Transactional
+    public boolean insert(StockProduct stockProduct) {
+        return stockProductMapper.insert(stockProduct);
+    }
+    
+    @Transactional(readOnly=true)
+    public List<StockProduct> selectProduct(StockProduct stockProduct) {
+        return stockProductMapper.selectProduct(stockProduct);
+    }
 
 }

@@ -4,20 +4,29 @@
 <html>
 <head>
 <title>Admin Panel</title>
-<meta
-    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-    name="viewport">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"> 
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <!-- Font Awesome -->
-<link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <!-- Ionicons -->
-<link rel="stylesheet"
-    href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <!-- Theme style -->
 <link rel="stylesheet" href="css/AdminLTE.min.css">
 <link rel="stylesheet" href="css/skins/_all-skins.min.css">
+<!-- jQuery 2.1.4 -->
+    <script src="jQuery/jQuery-2.1.4.min.js"></script>
+<!-- jquery ajax -->
+<script>
+    $(document).ready(function($){
+        $("#saleForm").submit(function(event){
+            
+            event.preventDefault();
+            console.log($("#productId").val());
+        });
+    });
+</script>
 
 </head>
 <body>
@@ -29,17 +38,17 @@
                     </div>
             </center>
             <div class="row">
-            <c:url var="action" value="sales/addInvoice" />
-            <form:form action="${action}" method="post" commandName="sales"  class="form-vertical">
+            <c:url var="action" value="sales/searchInvoice" />
+            <form:form action="${action}" method="post" id="saleForm" commandName="stock"  class="form-vertical" accept-charset="utf-8">
                   <div class="form-group">
                      <label class="col-sm-2 control-label">Product</label>
                         <div class="col-sm-4">
-                             <form:input path="product" class="form-control" required="required"/>
+                             <form:input path="product" id="productId" class="form-control" required="required"/>
                         </div>
                   </div>
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-2">
-                          <button type="submit" class="btn btn-primary btn-sm btn-block">Add</button>
+                          <input type="submit" id="addProduct" value="Add" class="btn btn-primary btn-sm btn-block" />
                     </div>
                   </div>
             </form:form>
@@ -59,13 +68,13 @@
                         </thead>
                         <c:if test="${not empty invoiceList}">
                         <tbody>
-                            <c:forEach var="invoice" items="${invoiceList}" varStatus="itemSl">
+                            <c:forEach var="invoice" items="${addproduct}" varStatus="itemSl">
                                 <tr class="success">
                                     <td>${itemSl.index+1}</td>
-                                    <td>${invoice.productId}</td>
-                                    <td>${invoice.productName}</td>
-                                    <td>${invoice.quantity}</td>
-                                    <td>${invoice.salesPrice}</td>
+                                    <td>${addproduct.productId}</td>
+                                    <td>${productName}</td>
+                                    <td>${quantity}</td>
+                                    <td>${addproduct.salesPrice}</td>
                                 </tr>
                             </c:forEach>
                         </tbody>
