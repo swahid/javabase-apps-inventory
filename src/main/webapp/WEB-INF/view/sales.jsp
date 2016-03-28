@@ -35,7 +35,15 @@
                 dataType: 'json',
                 success : function(data) {
                     console.log("SUCCESS: ", data);
-                        $("#productTable").append(data.product);
+                    
+                    i++;
+                    $("#tableBody").append("<tr class='success'>");
+                    $("#tableBody").append("<td>"+i+"</td>");
+                    $("#tableBody").append("<td>"+data[0].product+"</td>");
+                    $("#tableBody").append("<td>"+data[0].salsePrice+"</td>");
+                    $("#tableBody").append("<td>"+data[0].quantity+"</td>");
+                    $("#tableBody").append("<td>"+data[0].unitPrice+"</td>");
+                    $("#tableBody").append("<tr>");
                 },
                 error : function(e) {
                     console.log("ERROR: ", e);
@@ -87,14 +95,8 @@
                                 <th>Price</th>
                             </tr>
                         </thead>
-                        <tbody>
-	                        <tr class="success">
-	                            <td>${index+1}</td>
-	                            <td>${data.productId}</td>
-	                            <td>${data.productName}</td>
-	                            <td>${data.quantity}</td>
-	                            <td>${data.salesPrice}</td>
-	                        </tr>
+                        <tbody id="tableBody" class="success">
+	                        
                         </tbody>
                     </table>
                 </div>
