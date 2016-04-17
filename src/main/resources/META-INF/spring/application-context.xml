@@ -60,7 +60,7 @@
     </bean>
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="typeAliasesPackage" value="org.javabase.apps.entity" />
-        <property name="mapperLocations" value="classpath:/settings/mybatis/*.xml" />
+        <property name="mapperLocations" value="classpath:/META-INF/mybatis/*.xml" />
         <property name="dataSource" ref="dataSource" />
     </bean>
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
