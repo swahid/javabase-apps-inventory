@@ -43,7 +43,7 @@ public class LoginController {
             return "redirect:/profile";
         }else {
             m.put("message", "login Fail");
-            return "redirect:/profile";
+            return "redirect:/";
             
         }
     }
