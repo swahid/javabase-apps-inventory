@@ -71,7 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="/ims" class="logo">
+        <a href="/" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>IMS</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -112,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <a href="profile" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="/ims" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="/" class="btn btn-default btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>
