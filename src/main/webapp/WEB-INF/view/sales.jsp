@@ -19,6 +19,7 @@
     <script src="jQuery/jQuery-2.1.4.min.js"></script>
 <!-- jquery ajax -->
 <script>
+var index =0;
     $(document).ready(function($){
         $("#saleForm").submit(function(event){
             
@@ -26,6 +27,7 @@
             var data = {}
                 data["product"] = $("#productId").val(),
                 url ="sales/searchInvoice";
+                
             
             $.ajax({
                 type        : "POST",
@@ -36,9 +38,9 @@
                 success : function(data) {
                     console.log("SUCCESS: ", data);
                     
-                    i++;
-                    $("#tableBody").append("<tr class='success'>");
-                    $("#tableBody").append("<td>"+i+"</td>");
+                    index++;
+                    $("#tableBody").append('<tr class="success">');
+                    $("#tableBody").append("<td>"+index+"</td>");
                     $("#tableBody").append("<td>"+data[0].product+"</td>");
                     $("#tableBody").append("<td>"+data[0].salsePrice+"</td>");
                     $("#tableBody").append("<td>"+data[0].quantity+"</td>");
@@ -82,7 +84,7 @@
                   </div>
             </form>
             </div>
-                <div class="row">
+            <div class="row">
                  <div class="col-xs-12">
                 <div class="box-body no-padding">
                     <table id="productTable" class="table table-striped">

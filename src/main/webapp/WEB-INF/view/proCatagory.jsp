@@ -26,9 +26,9 @@
     <t:admin>
         <jsp:body>
             <center>
-                    <div class="page-header">
-                          <h1>Add New Catagory</h1>
-                    </div>
+	            <div class="page-header">
+	                  <h1>Add New Catagory</h1>
+	            </div>
             </center>
             <c:url var="action" value="proCatagory/addCatagory" />
                    <form:form action="${action}" method="post"
