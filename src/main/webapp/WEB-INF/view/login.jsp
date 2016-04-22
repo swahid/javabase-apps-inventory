@@ -8,36 +8,33 @@
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
     
     <link rel="stylesheet" href="css/login/normalize.css">
-    
-        <link rel="stylesheet" href="css/login/style.css">
+    <link rel="stylesheet" href="css/login/style.css">
   </head>
   <body>
-
     <div class="form">
       
       <ul class="tab-group">
         <li class="tab active"><a href="#signup">Sign Up</a></li>
         <li class="tab"><a href="#login">Log In</a></li>
       </ul>
-      
       <div class="tab-content">
         <div id="signup">   
           <h1>Sign Up for Free <br>${message}</h1>
         <c:url var="action" value="login/registration" />
-        <form:form action="${action}" method="post" commandName="user">
+        <form action="${action}" method="post">
           <div class="top-row">
             <div class="field-wrap">
               <label>
                 First Name<span class="req">*</span>
               </label>
-              <form:input path="firstName" />
+              <input type="text" id="firstName" />
             </div>
         
             <div class="field-wrap">
               <label>
                 Last Name<span class="req">*</span>
               </label>
-              <form:input path="lastName" />
+              <input type="text" id="lastName" />
             </div>
           </div>
 
@@ -45,19 +42,19 @@
             <label>
               User Name<span class="req">*</span>
             </label>
-            <form:input path="userName" required="required"/>
+            <input type="text" id="userName" required="required"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Set A Password<span class="req">*</span>
             </label>
-            <form:password path="password" required="required"/>
+            <input type="password" id="password" required="required"/>
           </div>
           
           <button type="submit" class="button button-block">Get Started</button>
           
-          </form:form>
+          </form>
 
         </div>
         
@@ -65,37 +62,34 @@
           <h1>Welcome Back!</h1>
           
           <c:url var="action" value="login" />
-          <form:form action="${action}" method="post" commandName="user">
-          
+          <form action="${action}" method="post">
             <div class="field-wrap">
             <label>
               User Name<span class="req">*</span>
             </label>
-            <form:input path="userName" required="required"/>
+            <input type="text" id="userName" required="required"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <form:password path="password" required="required"/>
+            <input type="password" id="password" required="required"/>
           </div>
           
           <p class="forgot"><a href="#">Forgot Password?</a></p>
           
           <button type="submit" class="button button-block">Log In</button>
           
-          </form:form>
-
+          </form>
+          
         </div>
         
       </div><!-- tab-content -->
       
 </div> <!-- /form -->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-        <script src="js/login/index.js"></script>
-
+    <script src="js/login/index.js"></script>
     
     
     

@@ -3,7 +3,6 @@
  */
 package org.javabase.apps.controller;
 
-import org.javabase.apps.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,8 +19,6 @@ public class indexController {
     
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String index(ModelMap m){
-        
-        m.put("user", new User());
         
         return "index";
     }
