@@ -19,7 +19,7 @@
       </ul>
       <div class="tab-content">
         <div id="signup">   
-          <h1>Sign Up for Free <br>${message}</h1>
+          <h1 id="msg">Sign Up for Free </h1>
         
         <form action="#" method="post" id="regForm">
           <div class="top-row">
@@ -112,21 +112,19 @@
                 success : function(data) {
                     console.log("SUCCESS: ", data);
                     var message = "registration Sucess";
+                    $("#msg").html("registration Sucess Please Login");
+                    document.getElementById("regForm").reset()
                 },
                 error : function(e) {
                     console.log("ERROR: ", e);
-                    var message = "registration Failed";
-                },
-                done : function(e) {
-                    console.log("DONE");
+                    $("#msg").html("registration failed");
+                    document.getElementById("regForm").reset()
                 }
             });
             
         });
         
     });
-        
-    
     </script>
     
     
