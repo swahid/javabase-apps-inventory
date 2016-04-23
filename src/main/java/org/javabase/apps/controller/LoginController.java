@@ -38,17 +38,17 @@ public class LoginController {
     
     @ResponseBody
     @RequestMapping(method=RequestMethod.POST)
-    public String login(ModelMap m, @RequestBody User user){
-        
+    public Map<String, Object> login(@RequestBody User user){
+        Map<String, Object> response= new HashMap<String, Object>();
         List<User> userList=userservice.login(user);
         if (userList.size()>0) {
-            m.put("message", "login sucess ");
-            return "redirect:/profile";
+            response.put("suceess", true);
+            response.put("message", "Registration Sucess");
         }else {
-            m.put("message", "login Fail");
-            return "redirect:/";
-            
+            response.put("suceess", true);
+            response.put("message", "Registration failed");
         }
+        return response;
     }
     
     @ResponseBody
@@ -57,6 +57,7 @@ public class LoginController {
         Map<String, Object> response= new HashMap<String, Object>();
         userservice.insert(user);
         response.put("suceess", true);
+        response.put("message", "Registration Sucess");
         
         return response;
     }

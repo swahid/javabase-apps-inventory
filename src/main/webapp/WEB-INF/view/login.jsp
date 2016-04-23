@@ -61,8 +61,7 @@
         <div id="login">   
           <h1>Welcome Back!</h1>
           
-          <c:url var="action" value="login" />
-          <form action="${action}" method="post">
+          <form action="#" method="post" id="loginForm">
             <div class="field-wrap">
             <label>
               User Name<span class="req">*</span>
@@ -112,6 +111,34 @@
                 success : function(data) {
                     console.log("SUCCESS: ", data);
                     var message = "registration Sucess";
+                    $("#msg").html(data.message);
+                    document.getElementById("regForm").reset()
+                },
+                error : function(e) {
+                    console.log("ERROR: ", e);
+                    $("#msg").html(data.message);
+                    document.getElementById("regForm").reset()
+                }
+            });
+            
+        });
+        $("#loginForm").submit(function(event){
+            
+            event.preventDefault();
+            var data = {}
+                data["userName"] = $("#userName").val(),
+                data["password"] = $("#password").val();
+                url = "login";
+                
+            $.ajax({
+                type        : "POST",
+                contentType : "application/json",
+                url     : url,
+                data    : JSON.stringify(data),
+                dataType: 'json',
+                success : function(data) {
+                    console.log("SUCCESS: ", data);
+                    window.location.href ="profile";
                     $("#msg").html("registration Sucess Please Login");
                     document.getElementById("regForm").reset()
                 },
@@ -123,7 +150,6 @@
             });
             
         });
-        
     });
     </script>
     
