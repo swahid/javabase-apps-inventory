@@ -20,8 +20,8 @@
       <div class="tab-content">
         <div id="signup">   
           <h1>Sign Up for Free <br>${message}</h1>
-        <c:url var="action" value="login/registration" />
-        <form action="${action}" method="post">
+        
+        <form action="#" method="post" id="regForm">
           <div class="top-row">
             <div class="field-wrap">
               <label>
@@ -90,7 +90,44 @@
 </div> <!-- /form -->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="js/login/index.js"></script>
+    <script type="text/javascript">
+    // registration method on jQuery
+    $(document).ready(function($){
+        $("#regForm").submit(function(event){
+            
+            event.preventDefault();
+            var data = {}
+                data["firstName"] = $("#firstName").val(),
+                data["lastName"] = $("#lastName").val(),
+                data["userName"] = $("#userName").val(),
+                data["password"] = $("#password").val();
+                url = "login/registration";
+                
+            $.ajax({
+                type        : "POST",
+                contentType : "application/json",
+                url     : url,
+                data    : JSON.stringify(data),
+                dataType: 'json',
+                success : function(data) {
+                    console.log("SUCCESS: ", data);
+                    var message = "registration Sucess";
+                },
+                error : function(e) {
+                    console.log("ERROR: ", e);
+                    var message = "registration Failed";
+                },
+                done : function(e) {
+                    console.log("DONE");
+                }
+            });
+            
+        });
+        
+    });
+        
     
+    </script>
     
     
   </body>

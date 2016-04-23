@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author      Saurav Wahid <saurav@medisys.com.sa>
@@ -41,10 +40,8 @@ public class SalesController {
     @ResponseBody
     @RequestMapping(value="searchInvoice",method=RequestMethod.POST)
     public List<StockProduct> index( @RequestBody StockProduct stockProduct, ModelMap m){
-        ModelAndView model = new ModelAndView("sales");
         List<StockProduct> stockList = stockService.selectProduct(stockProduct);
         if (stockList.size()>0) {
-            model.addObject("addproduct", stockList);
         }
         return stockList;
     }
