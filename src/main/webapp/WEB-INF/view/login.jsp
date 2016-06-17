@@ -14,10 +14,36 @@
     <div class="form">
       
       <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
+        <li class="tab active"><a href="#login">Log In</a></li>
+        <li class="tab"><a href="#signup">Sign Up</a></li>
       </ul>
       <div class="tab-content">
+      	<div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form action="#" method="post" id="loginForm">
+            <div class="field-wrap">
+            <label>
+              User Name<span class="req">*</span>
+            </label>
+            <input type="text" id="userName" required="required"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password" id="password" required="required"/>
+          </div>
+          
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          
+          <button type="submit" class="button button-block">Log In</button>
+          
+          </form>
+          
+        </div>
+        
         <div id="signup">   
           <h1 id="msg">Sign Up for Free </h1>
         
@@ -56,32 +82,6 @@
           
           </form>
 
-        </div>
-        
-        <div id="login">   
-          <h1>Welcome Back!</h1>
-          
-          <form action="#" method="post" id="loginForm">
-            <div class="field-wrap">
-            <label>
-              User Name<span class="req">*</span>
-            </label>
-            <input type="text" id="userName" required="required"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password" id="password" required="required"/>
-          </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button type="submit" class="button button-block">Log In</button>
-          
-          </form>
-          
         </div>
         
       </div><!-- tab-content -->
