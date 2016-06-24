@@ -1,5 +1,5 @@
 /**
- * @des
+ * @des This class user for login and registration controll.
  * 
  */
 package org.javabase.apps.controller;
@@ -42,13 +42,16 @@ public class LoginController {
         Map<String, Object> response= new HashMap<String, Object>();
         List<User> userList=userservice.login(user);
         if (userList.size()>0) {
-            response.put("suceess", true);
-            response.put("message", "Registration Sucess");
+            System.out.println("login sucess");
+            response.put("Success", true);
+            response.put("page", "profile");
+            return response;
         }else {
-            response.put("suceess", true);
-            response.put("message", "Registration failed");
+        	System.out.println("login failed");
+        	response.put("Success", false);
+            response.put("data", "Bad Credintials");
+        	return response;
         }
-        return response;
     }
     
     @ResponseBody

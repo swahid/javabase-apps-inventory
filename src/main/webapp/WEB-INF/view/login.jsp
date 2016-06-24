@@ -136,16 +136,17 @@
                 url     : url,
                 data    : JSON.stringify(data),
                 dataType: 'json',
-                success : function(data) {
-                    console.log("SUCCESS: ", data);
-                    window.location.href ="profile";
-                    $("#msg").html("registration Sucess Please Login");
-                    document.getElementById("regForm").reset()
+                success : function(response) {
+                    document.getElementById("loginForm").reset()
+                    if (response.page !=null) {
+                    window.location.href =response.page;
+					}else {
+                    alert("Bad Credintials")
+					}
                 },
-                error : function(e) {
-                    console.log("ERROR: ", e);
-                    $("#msg").html("registration failed");
-                    document.getElementById("regForm").reset()
+                error : function (jqxhr, status, errorThrown) {
+                    document.getElementById("loginForm").reset()
+                    alert("Bad Credintials")
                 }
             });
             
