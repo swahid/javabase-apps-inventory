@@ -137,14 +137,17 @@
                 data    : JSON.stringify(data),
                 dataType: 'json',
                 success : function(response) {
-                    document.getElementById("loginForm").reset()
+                	console.log("SUCCESS: ", response);
                     if (response.page !=null) {
                     window.location.href =response.page;
+                    document.getElementById("loginForm").reset()
 					}else {
+                    document.getElementById("loginForm").reset()
                     alert("Bad Credintials")
 					}
                 },
-                error : function (jqxhr, status, errorThrown) {
+                error : function (e) {
+                	console.log("ERROR: ", e);
                     document.getElementById("loginForm").reset()
                     alert("Bad Credintials")
                 }

@@ -69,9 +69,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Main Header -->
       <header class="main-header">
-
+		<c:url var="index" value="/" />
         <!-- Logo -->
-        <a href="/ims" class="logo">
+        <a href="${index}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>IMS</b></span>
           <!-- logo for regular state and mobile devices -->

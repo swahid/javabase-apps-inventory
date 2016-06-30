@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author      Saurav Wahid <saurav@medisys.com.sa>
- * @version      1.0.1
- * @since        1.0.0
+ * @version     1.0.1
+ * @since       1.0.0
  * 
  */
 @Controller
+@RequestMapping(value="/")
 public class indexController {
     
-    @RequestMapping(value="/", method=RequestMethod.GET)
+    @RequestMapping(method=RequestMethod.GET)
     public String index(ModelMap m){
         
         return "index";

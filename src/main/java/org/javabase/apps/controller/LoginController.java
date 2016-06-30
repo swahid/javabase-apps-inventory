@@ -33,6 +33,8 @@ public class LoginController {
     @RequestMapping(method=RequestMethod.GET)
     public String index(ModelMap m, User user){
         
+    	m.put("user", new User());
+    	
         return "login";
     }
     
