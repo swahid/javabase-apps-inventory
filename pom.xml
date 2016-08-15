@@ -26,7 +26,6 @@
 
         <!-- Test -->
         <junit.version>4.11</junit.version>
-        
     </properties>
     
     <dependencies>
@@ -121,31 +120,19 @@
             <version>4.2.1.RELEASE</version>
         </dependency>
         
-        <!-- Spring with fb connect -->
-        <dependency>
-            <groupId>org.springframework.social</groupId>
-            <artifactId>spring-social-facebook</artifactId>
-            <version>2.0.3.RELEASE</version>
-        </dependency>
-
-        
-        <!-- Test Artifacts -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>${spring-framework.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
     <build>
-    	<finalName>ims</finalName>
-    	<plugins>
+        <finalName>ims</finalName>
+        <filters>
+            <filter>src/main/resources/META-INF/propertise/local.properties</filter>
+        </filters>
+        <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+        <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -178,8 +165,8 @@
         </plugins>
     </build>
     <organization>
-    	<url>http://javabase.org</url>
-    	<name>JavaBase incorporated.</name>
+        <url>http://javabase.org</url>
+        <name>JavaBase incorporated.</name>
     </organization>
     <profiles>
         <profile>
@@ -192,7 +179,16 @@
             <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
             <id>openshift</id>
             <build>
-                <finalName>inventory</finalName>
+                <finalName>ROOT</finalName>
+                <filters>
+                    <filter>src/main/resources/META-INF/propertise/openshift.properties</filter>
+                </filters>
+                <resources>
+                  <resource>
+                    <directory>src/main/resources/</directory>
+                    <filtering>true</filtering>
+                  </resource>
+                </resources>
                 <plugins>
                     <plugin>
                         <artifactId>maven-war-plugin</artifactId>

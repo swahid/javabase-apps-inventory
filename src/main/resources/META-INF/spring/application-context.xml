@@ -44,7 +44,7 @@
     <!-- datasource configuration -->
 
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
-        <property name="location" value ="classpath:/META-INF/propertise/database.properties" />
+        <property name="location" value ="classpath:/META-INF/propertise/${database}.properties" />
     </bean>
 
     <bean id="dataSource"
