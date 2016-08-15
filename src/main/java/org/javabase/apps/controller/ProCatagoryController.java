@@ -29,18 +29,18 @@ public class ProCatagoryController {
 
     @RequestMapping(method=RequestMethod.GET)
     public ModelAndView product(ModelMap m,  ModelAndView mv){
-    	
-    	List<ProCatagory> catagories=procatagoryservice.selectProCatagory();
+        
+        List<ProCatagory> catagories=procatagoryservice.selectProCatagory();
         m.put("procatagory", new ProCatagory());
         ModelAndView model = new ModelAndView("proCatagory");
-		model.addObject("catagoryList", catagories);
+        model.addObject("catagoryList", catagories);
         return model;
         
     }
     
     @RequestMapping(value="addCatagory",method=RequestMethod.POST)
     public String index(ProCatagory procatagory, ModelMap m){
-    	
+        
         
         if (procatagoryservice.insert(procatagory)) {
             m.put("message", "Add Catagory Success");

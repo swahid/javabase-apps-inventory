@@ -28,8 +28,7 @@ public class InvoiceServiceImpl implements InvoiceService {
     public List<Invoice> selectAll() {
         return invoiceMapper.selectAll();
     }
-
-
+    
     @Transactional
     public boolean insert(Invoice salseInvoice) {
         return invoiceMapper.insert(salseInvoice);

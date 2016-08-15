@@ -29,18 +29,18 @@ public class RetailInfoController {
 
     @RequestMapping(method=RequestMethod.GET)
     public ModelAndView product(ModelMap m,  ModelAndView mv){
-    	
-    	List<RetailInfo> retailList=retailInfoService.selectRetailInfo();
+        
+        List<RetailInfo> retailList=retailInfoService.selectRetailInfo();
         m.put("retail", new RetailInfo());
         ModelAndView model = new ModelAndView("retail");
-		model.addObject("retailList", retailList);
+        model.addObject("retailList", retailList);
         return model;
         
     }
     
     @RequestMapping(value="addRetail",method=RequestMethod.POST)
     public String index(RetailInfo retailInfo, ModelMap m){
-    	
+        
         
         if (retailInfoService.insert(retailInfo)) {
             m.put("message", "Add  Success");

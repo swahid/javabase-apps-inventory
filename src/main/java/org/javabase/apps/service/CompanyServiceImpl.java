@@ -12,27 +12,27 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @author  Md. Rashedunnabi <rashedunnabi21@gmail.com>
- * @verison	1.0.1
- * @since	1.0.0
+ * @author      Md. Rashedunnabi <rashedunnabi21@gmail.com>
+ * @verison     1.0.1
+ * @since       1.0.0
  */
 @Service
 public class CompanyServiceImpl implements CompanyService {
 
-	 @Autowired
-	CompanyMapper companyMapper;
+     @Autowired
+    CompanyMapper companyMapper;
 
-	 @Transactional(readOnly=true)
-	public List<Company> selectCompany() {
-		return companyMapper.selectCompany();
-	}
+     @Transactional(readOnly=true)
+    public List<Company> selectCompany() {
+        return companyMapper.selectCompany();
+    }
 
-	 @Transactional
-	public boolean insert(Company company) {
-		return companyMapper.insert(company);
-	}
-	
-	 
-	
+     @Transactional
+    public boolean insert(Company company) {
+        return companyMapper.insert(company);
+    }
+    
+     
+    
 
 }

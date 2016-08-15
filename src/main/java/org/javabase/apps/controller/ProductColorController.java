@@ -29,18 +29,18 @@ public class ProductColorController {
 
     @RequestMapping(method=RequestMethod.GET)
     public ModelAndView product(ModelMap m,  ModelAndView mv){
-    	
-    	List<ProductColor> productColorList=productColorService.selectProductColor();
+        
+        List<ProductColor> productColorList=productColorService.selectProductColor();
         m.put("color", new ProductColor());
         ModelAndView model = new ModelAndView("productColor");
-		model.addObject("colorList", productColorList);
+        model.addObject("colorList", productColorList);
         return model;
         
     }
     
     @RequestMapping(value="addColor",method=RequestMethod.POST)
     public String index(ProductColor productColor, ModelMap m){
-    	
+        
         
         if (productColorService.insert(productColor)) {
             m.put("message", "Add Color Success");

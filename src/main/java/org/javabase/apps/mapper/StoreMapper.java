@@ -6,9 +6,9 @@ import org.javabase.apps.entity.Store;
 
 
 /**
- * @author  Md. Rashedunnabi <rashedunnabi21@gmail.com>
- * @verison	1.0.1
- * @since	1.0.0
+ * @author      Md. Rashedunnabi <rashedunnabi21@gmail.com>
+ * @verison     1.0.1
+ * @since       1.0.0
  */
 
 public interface StoreMapper {

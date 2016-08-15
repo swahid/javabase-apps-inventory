@@ -29,18 +29,18 @@ public class CompanyController {
 
     @RequestMapping(method=RequestMethod.GET)
     public ModelAndView product(ModelMap m,  ModelAndView mv){
-    	
-    	List<Company> companyList=companyService.selectCompany();
+        
+        List<Company> companyList=companyService.selectCompany();
         m.put("company", new Company());
         ModelAndView model = new ModelAndView("company");
-		model.addObject("companyList", companyList);
+        model.addObject("companyList", companyList);
         return model;
         
     }
     
     @RequestMapping(value="addCompany",method=RequestMethod.POST)
     public String index(Company company, ModelMap m){
-    	
+        
         
         if (companyService.insert(company)) {
             m.put("message", "Add Company Success");

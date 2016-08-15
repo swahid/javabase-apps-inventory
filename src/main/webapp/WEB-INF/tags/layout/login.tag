@@ -69,7 +69,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Main Header -->
       <header class="main-header">
-		<c:url var="index" value="/" />
+        <c:url var="index" value="/" />
         <!-- Logo -->
         <a href="${index}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->

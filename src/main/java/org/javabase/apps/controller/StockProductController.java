@@ -15,36 +15,35 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * @author      Saurav Wahid <saurav@medisys.com.sa>
- * @version     1.0.1
- * @since       1.0.0
+ * @author  Saurav Wahid <saurav@medisys.com.sa>
+ * @version 1.0.1
+ * @since   1.0.0
  * 
  */
 @Controller
-@RequestMapping(value="/stock")
+@RequestMapping(value = "/stock")
 public class StockProductController {
-    
+
     @Autowired
     StockProductService stockProductService;
 
-    @RequestMapping(method=RequestMethod.GET)
-    public ModelAndView product(ModelMap m,  ModelAndView mv){
-    	
-    	List<StockProduct> stockList=stockProductService.selectProductItem();
+    @RequestMapping(method = RequestMethod.GET)
+    public ModelAndView product(ModelMap m, ModelAndView mv) {
+
+        List<StockProduct> stockList = stockProductService.selectProductItem();
         m.put("stock", new StockProduct());
         ModelAndView model = new ModelAndView("stock");
-		model.addObject("stockList", stockList);
+        model.addObject("stockList", stockList);
         return model;
-        
+
     }
-    
-    @RequestMapping(value="addStock",method=RequestMethod.POST)
-    public String index(StockProduct stockProduct, ModelMap m){
-    	
-        
+
+    @RequestMapping(value = "addStock", method = RequestMethod.POST)
+    public String index(StockProduct stockProduct, ModelMap m) {
+
         if (stockProductService.insert(stockProduct)) {
             m.put("message", "Add  Success");
-        }else {
+        } else {
             m.put("message", "Add  Fail");
         }
         return "redirect:/stock";

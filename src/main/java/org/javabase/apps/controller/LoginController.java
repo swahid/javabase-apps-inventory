@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author	Saurav Wahid<saurav1161@gmail.com>
- * @version	1.0.1
- * @since	1.0.0
+ * @author   Saurav Wahid<saurav1161@gmail.com>
+ * @version  1.0.1
+ * @since    1.0.0
  */
 @Controller
 @RequestMapping(value="/login")
@@ -33,8 +33,8 @@ public class LoginController {
     @RequestMapping(method=RequestMethod.GET)
     public String index(ModelMap m, User user){
         
-    	m.put("user", new User());
-    	
+        m.put("user", new User());
+        
         return "login";
     }
     
@@ -49,10 +49,10 @@ public class LoginController {
             response.put("page", "profile");
             return response;
         }else {
-        	System.out.println("login failed");
-        	response.put("Success", false);
+            System.out.println("login failed");
+            response.put("Success", false);
             response.put("data", "Bad Credintials");
-        	return response;
+            return response;
         }
     }
     

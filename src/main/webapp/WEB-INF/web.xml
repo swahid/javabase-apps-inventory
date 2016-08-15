@@ -8,9 +8,9 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     <display-name>IMS</display-name>
     
    <!--
-		- Location of the XML file that defines the root application context.
-		- Applied by ContextLoaderListener.
-	-->
+        - Location of the XML file that defines the root application context.
+        - Applied by ContextLoaderListener.
+    -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:META-INF/spring/application-context.xml</param-value>

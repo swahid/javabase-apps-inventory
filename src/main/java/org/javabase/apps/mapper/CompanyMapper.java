@@ -3,7 +3,6 @@ package org.javabase.apps.mapper;
 import java.util.List;
 
 import org.javabase.apps.entity.Company;
-import org.javabase.apps.entity.ProductColor;
 
 
 /**

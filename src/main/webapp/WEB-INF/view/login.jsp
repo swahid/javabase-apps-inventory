@@ -18,7 +18,7 @@
         <li class="tab"><a href="#signup">Sign Up</a></li>
       </ul>
       <div class="tab-content">
-      	<div id="login">   
+          <div id="login">   
           <h1>Welcome Back!</h1>
           
           <form action="#" method="post" id="loginForm">
@@ -137,17 +137,18 @@
                 data    : JSON.stringify(data),
                 dataType: 'json',
                 success : function(response) {
-                	console.log("SUCCESS: ", response);
+                    console.log("SUCCESS: ", response);
                     if (response.page !=null) {
                     window.location.href =response.page;
                     document.getElementById("loginForm").reset()
-					}else {
+                    }else {
                     document.getElementById("loginForm").reset()
                     alert("Bad Credintials")
-					}
+                    }
+                    
                 },
                 error : function (e) {
-                	console.log("ERROR: ", e);
+                    console.log("ERROR: ", e);
                     document.getElementById("loginForm").reset()
                     alert("Bad Credintials")
                 }

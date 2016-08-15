@@ -29,18 +29,18 @@ public class ProductItemController {
 
     @RequestMapping(method=RequestMethod.GET)
     public ModelAndView product(ModelMap m,  ModelAndView mv){
-    	
-    	List<ProductItem> productItes=productItemService.selectProductItem();
+        
+        List<ProductItem> productItes=productItemService.selectProductItem();
         m.put("item", new ProductItem());
         ModelAndView model = new ModelAndView("productItem");
-		model.addObject("productItes", productItes);
+        model.addObject("productItes", productItes);
         return model;
         
     }
     
     @RequestMapping(value="addItem",method=RequestMethod.POST)
     public String index(ProductItem productItem, ModelMap m){
-    	
+        
         
         if (productItemService.insert(productItem)) {
             m.put("message", "Add Catagory Success");

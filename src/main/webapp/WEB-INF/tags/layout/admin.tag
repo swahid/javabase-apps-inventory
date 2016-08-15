@@ -65,7 +65,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   |---------------------------------------------------------|
   -->
 <body class="hold-transition skin-blue sidebar-mini">
-	<c:url var="index" value="/" />
+    <c:url var="index" value="/" />
     <div class="wrapper">
 
       <!-- Main Header -->
