@@ -3,7 +3,6 @@ package org.javabase.apps.service;
 import java.util.List;
 
 import org.javabase.apps.entity.ProCatagory;
-import org.javabase.apps.entity.User;
 
 
 /**
