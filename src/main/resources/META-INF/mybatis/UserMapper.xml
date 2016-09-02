@@ -20,10 +20,15 @@
         <result property="contact"  column="contact" />
         <result property="userRole"  column="role_id" />
         <result property="password"  column="password" />
+        <result property="status"  column="status" />
     </resultMap>
     
     <select id="selectUser" resultMap="list">
-        select * from user
+        select * from user where 1=1
+    </select>
+    
+    <select id="findByUserName" resultMap="list" parameterType="String">
+        select * from user where user_name = #{userName}
     </select>
     
     <select id="login" resultMap="list" parameterType="User">

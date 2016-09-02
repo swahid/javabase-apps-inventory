@@ -30,30 +30,10 @@ public class LoginController {
     @Autowired
     UserService userservice;
     
-    @RequestMapping(method=RequestMethod.GET)
-    public String index(ModelMap m, User user){
-        
-        m.put("user", new User());
-        
-        return "login";
-    }
-    
     @ResponseBody
-    @RequestMapping(method=RequestMethod.POST)
-    public Map<String, Object> login(@RequestBody User user){
-        Map<String, Object> response= new HashMap<String, Object>();
-        List<User> userList=userservice.login(user);
-        if (userList.size()>0) {
-            System.out.println("login sucess");
-            response.put("Success", true);
-            response.put("page", "profile");
-            return response;
-        }else {
-            System.out.println("login failed");
-            response.put("Success", false);
-            response.put("data", "Bad Credintials");
-            return response;
-        }
+    @RequestMapping(method=RequestMethod.GET)
+    public String index(){
+        return "login";
     }
     
     @ResponseBody

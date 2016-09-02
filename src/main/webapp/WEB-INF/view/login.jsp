@@ -21,19 +21,24 @@
           <div id="login">   
           <h1>Welcome Back!</h1>
           
-          <form action="#" method="post" id="loginForm">
+          <font color="red">
+				<span style="align:center">${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</span>
+		  </font>
+		 
+          <form action="j_spring_security_check" method="POST" autocomplete="off"> 
+          	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <div class="field-wrap">
             <label>
               User Name<span class="req">*</span>
             </label>
-            <input type="text" id="userName" required="required"/>
+            <input type="text" id="j_username" name="j_username" required="required"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <input type="password" id="password" required="required"/>
+            <input type="password" id="j_password" name="j_password" required="required"/>
           </div>
           
           <p class="forgot"><a href="#">Forgot Password?</a></p>
@@ -47,7 +52,7 @@
         <div id="signup">   
           <h1 id="msg">Sign Up for Free </h1>
         
-        <form action="#" method="post" id="regForm">
+        <form action="#" method="post" id="regForm" autocomplete="off">
           <div class="top-row">
             <div class="field-wrap">
               <label>
@@ -122,7 +127,7 @@
             });
             
         });
-        $("#loginForm").submit(function(event){
+        /* $("#loginForm").submit(function(event){
             
             event.preventDefault();
             var data = {}
@@ -154,7 +159,7 @@
                 }
             });
             
-        });
+        }); */
     });
     </script>
     

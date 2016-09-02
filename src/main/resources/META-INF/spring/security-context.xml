@@ -5,20 +5,22 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
         http://www.springframework.org/schema/security
         http://www.springframework.org/schema/security/spring-security.xsd">
-        
+     
+     <http pattern="/css/**" security="none"/>
     <http  pattern="/" security="none"/>
     
     <http use-expressions="true">
-    	<intercept-url pattern="/login" access="permitAll" />
-        <form-login login-page="/login" default-target-url="/" authentication-failure-url="/"/>
-        <logout logout-url="/logout" logout-success-url="/"/> <!-- the logout url we will use in JSP -->
+    	<intercept-url pattern="/**" access="isAuthenticated()"/> <!-- this means all URL in this app will be checked if user is authenticated -->
+        <form-login login-page="/login" default-target-url="/" authentication-failure-url="/" login-processing-url="/j_spring_security_check" authentication-success-forward-url="/profile" username-parameter="j_username" password-parameter="j_password" />
+        <logout logout-url="/" logout-success-url="/"/> <!-- the logout url we will use in JSP -->
+    	<csrf disabled="true"/>
     </http>
         
-        <authentication-manager>
-            <authentication-provider user-service-ref='myUserDetailsService'/>
-        </authentication-manager>
-        
-        <beans:bean id="myUserDetailsService" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+        <beans:bean id="authenticationManager" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
             <beans:property name="dataSource" ref="dataSource"/>
         </beans:bean>
+        
+        <authentication-manager>
+            <authentication-provider user-service-ref='userDetailsService'/>
+        </authentication-manager>
 </beans:beans>

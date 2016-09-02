@@ -1,0 +1,40 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- 
+    ================================================================================
+    @author     Saurav Wahid<saurav@medisys.com.sa>
+    @web        www.javabase.org
+    @version    1.0.1
+    @since      1.0.0
+    ================================================================================
+    -->
+<mapper namespace="org.javabase.apps.mapper.UserRoleMapper">
+
+    <resultMap id="list" type="UserRole">
+        <result property="roleId"  column="role_id" />
+        <result property="userRole"  column="user_role" />
+    </resultMap>
+    
+    <select id="selectUser" resultMap="list">
+        select * from UserRole where 1=1
+    </select>
+    
+    <select id="findByUserRole" resultMap="list" parameterType="String">
+        select * from UserRole where user_role = #{userRole}
+    </select>
+    
+    <insert id="insert" parameterType="User">
+    INSERT INTO UserRole(
+        role_id,
+        user_role
+    )
+    values(
+        #{roleId},
+        #{userRole}
+    )
+    </insert>
+    
+    
+</mapper>

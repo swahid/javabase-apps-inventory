@@ -8,8 +8,8 @@
 <body>
     <t:admin>
         <jsp:body>
-            <p>Hi ${user}</p>
-            <p>Welcome to ${message}</p>
+            <p>Hi </p>
+            <p>Welcome to </p>
         </jsp:body>
     </t:admin>
 </body>

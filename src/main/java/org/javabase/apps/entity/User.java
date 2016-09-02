@@ -21,6 +21,7 @@ public class User implements Serializable{
     private String password;
     private String contact;
     private String userRole;
+    private String status;
     
     
     public String getPassword() {
@@ -66,5 +67,11 @@ public class User implements Serializable{
     public void setUserRole(String userRole) {
         this.userRole = userRole;
     }
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
     
 }

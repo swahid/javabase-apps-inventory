@@ -28,5 +28,10 @@ public class UserServiceImpl implements UserService{
     public boolean insert(User user) {
         return usermapper.insert(user);
     }
+
+	@Override
+	public User findByUserName(String user) {
+		return usermapper.findByUserName(user);
+	}
     
 }
