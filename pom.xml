@@ -18,6 +18,7 @@
         <servlet.version>2.5</servlet.version>
         <!-- Spring -->
         <spring-framework.version>4.2.4.RELEASE</spring-framework.version>
+        <springsecurity.version>4.0.2.RELEASE</springsecurity.version>
         <jackson.version>2.6.3</jackson.version>
 
         <!-- Logging -->
@@ -64,26 +65,16 @@
         
         <!-- Spring Security -->
         <dependency>
-	        <groupId>org.springframework.security</groupId>
-	        <artifactId>spring-security-core</artifactId>
-	        <version>4.1.3.RELEASE</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.springframework.security</groupId>
-	        <artifactId>spring-security-web</artifactId>
-	        <version>4.1.3.RELEASE</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.springframework.security</groupId>
-	        <artifactId>spring-security-config</artifactId>
-	        <version>4.1.3.RELEASE</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.springframework.security</groupId>
-	        <artifactId>spring-security-taglibs</artifactId>
-	        <version>4.1.3.RELEASE</version>
-	    </dependency>
-        
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+               
         <!-- Need this for json to/from object -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

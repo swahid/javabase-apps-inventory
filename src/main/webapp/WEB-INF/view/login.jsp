@@ -24,25 +24,24 @@
           <font color="red">
 				<span style="align:center">${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</span>
 		  </font>
-		 
-          <form action="j_spring_security_check" method="POST" autocomplete="off"> 
-          	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+		 	<c:url var="loginUrl" value="/login" />
+          <form action="${loginUrl}" method="POST" autocomplete="off"> 
             <div class="field-wrap">
             <label>
               User Name<span class="req">*</span>
             </label>
-            <input type="text" id="j_username" name="j_username" required="required"/>
+            <input type="text" name="username" required="required"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <input type="password" id="j_password" name="j_password" required="required"/>
+            <input type="password" name="password" required="required"/>
           </div>
           
           <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
+          <input type="hidden" name="${_csrf.parameterName}"   value="${_csrf.token}" />
           <button type="submit" class="button button-block">Log In</button>
           
           </form>
