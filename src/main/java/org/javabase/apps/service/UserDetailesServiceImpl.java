@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.javabase.apps.entity.User;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -48,10 +47,8 @@ public class UserDetailesServiceImpl implements UserDetailsService {
 		// authentication Spring Security
 		org.springframework.security.core.userdetails.User securedUser = 
 				new org.springframework.security.core.userdetails.User(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
-		System.out.println("authentication sucess");
 		return securedUser;
 		}else {
-			System.out.println("authentication failure");
 			 throw new UsernameNotFoundException("Invalid User");
 		}
 	}

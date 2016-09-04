@@ -8,11 +8,13 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
      
         <http auto-config="true">
         <intercept-url pattern="/css/**" access="permitAll" />
+        <intercept-url pattern="/img/**" access="permitAll" />
         <intercept-url pattern="/js/**" access="permitAll" />
         <intercept-url pattern="/fonts/**" access="permitAll" />
         <intercept-url pattern="/jQuery/**" access="permitAll" />
         <intercept-url pattern="/template/**" access="permitAll" />
         <intercept-url pattern="/plugins/**" access="permitAll" />
+        <intercept-url pattern="/" access="permitAll" />
         <intercept-url pattern="/login" access="permitAll" />
         <intercept-url pattern="/**" access="isAuthenticated()" />
         <form-login  
@@ -21,9 +23,15 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
         password-parameter="password" 
         authentication-failure-url="/403"
         default-target-url="/profile"
+        always-use-default-target="true"
         />
         <csrf disabled="true"/>
     </http>
+    
+    <!-- <beans:bean id="authenticationSuccessHandler"
+            class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+        <beans:property name="defaultTargetUrl" value="/profile"/>
+    </beans:bean> -->
   
     <beans:bean id="authenticationManager" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
             <beans:property name="dataSource" ref="dataSource"/>
