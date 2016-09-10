@@ -18,21 +18,19 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
         <intercept-url pattern="/login" access="permitAll" />
         <intercept-url pattern="/**" access="isAuthenticated()" />
         <form-login  
-        login-page="/login" 
-        username-parameter="username" 
-        password-parameter="password" 
-        authentication-failure-url="/403"
-        default-target-url="/profile"
-        always-use-default-target="true"
+	        login-page="/login" 
+	        username-parameter="username" 
+	        password-parameter="password" 
+	        authentication-failure-url="/403"
+	        default-target-url="/profile"
+	        always-use-default-target="true"
         />
+        <logout 
+	        logout-success-url="/"
+	        delete-cookies="JSESSIONID"/>
         <csrf disabled="true"/>
     </http>
-    
-    <!-- <beans:bean id="authenticationSuccessHandler"
-            class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
-        <beans:property name="defaultTargetUrl" value="/profile"/>
-    </beans:bean> -->
-  
+      
     <beans:bean id="authenticationManager" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
             <beans:property name="dataSource" ref="dataSource"/>
     </beans:bean>

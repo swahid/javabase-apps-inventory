@@ -39,7 +39,11 @@
         <property name="prefix" value="/WEB-INF/view/" />
         <property name="suffix" value=".jsp" />
     </bean>
-
+    
+	<!-- To prevent browser's back button on displaying secured resource after logout -->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+	    <property name="cacheSeconds" value="0" />
+	</bean>
     <!-- ============================================================= -->
     <!-- datasource configuration -->
 

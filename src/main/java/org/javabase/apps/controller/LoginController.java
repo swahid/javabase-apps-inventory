@@ -7,9 +7,15 @@ package org.javabase.apps.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.javabase.apps.entity.User;
 import org.javabase.apps.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,13 +28,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @since    1.0.0
  */
 @Controller
-@RequestMapping(value="/login")
 public class LoginController {
     
     @Autowired
     UserService userservice;
     
-    @RequestMapping(method=RequestMethod.GET)
+    @RequestMapping(value="/login",method=RequestMethod.GET)
     public String index(){
         return "login";
     }
@@ -43,5 +48,12 @@ public class LoginController {
         
         return response;
     }
-    
+    @RequestMapping(value="/logout", method = RequestMethod.GET)
+    public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null){    
+            new SecurityContextLogoutHandler().logout(request, response, auth);
+        }
+        return "redirect:/?logout";//You can redirect wherever you want, but generally it's a good practice to show login screen again.
+    }
 }
