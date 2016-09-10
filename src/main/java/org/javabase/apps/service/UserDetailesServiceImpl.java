@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.javabase.apps.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -35,14 +36,7 @@ public class UserDetailesServiceImpl implements UserDetailsService {
 		// populate user role
 		
 		Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		authorities.add(new GrantedAuthority() {
-			private static final long serialVersionUID = 5787751228887193946L;
-
-			@Override
-			public String getAuthority() {
-				return user.getUserRole();
-			}
-		});
+		authorities.add(new SimpleGrantedAuthority(user.getUserRole()));
 		
 		// authentication Spring Security
 		org.springframework.security.core.userdetails.User securedUser = 
