@@ -1,6 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="t" tagdir="/WEB-INF/tags/layout/" %>
-<%@taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="/WEB-INF/tags/layout/includes.jsp"%>
 <html>
 <head>
     <title>Profile Page</title>
@@ -8,8 +6,11 @@
 <body>
     <t:admin>
         <jsp:body>
-            <p>Hi </p>
-            <p>Welcome to </p>
+            <p>Welcome <sec:authentication property="principal.username" /> </p>
+            
+            <p>Welcome <c:out value="${userDeatils.firstName} ${userDeatils.lastName}"></c:out></p>
+            <p>Role <c:out value="${userDeatils.userRole}"></c:out></p>
+            
         </jsp:body>
     </t:admin>
 </body>

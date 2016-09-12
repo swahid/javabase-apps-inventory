@@ -116,7 +116,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <footer class="main-footer">
         <!-- Default to the left -->
         <jsp:invoke fragment="footer"/>
-        <strong>Copyright &copy; 2016 <a href="#">@Javabase Inc.</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2016 <a href="#">@Javabase Inc.</a></strong> All rights reserved.
       </footer>
     </div><!-- ./wrapper -->
 

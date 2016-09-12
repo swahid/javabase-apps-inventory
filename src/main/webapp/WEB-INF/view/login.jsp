@@ -126,39 +126,6 @@
             });
             
         });
-        /* $("#loginForm").submit(function(event){
-            
-            event.preventDefault();
-            var data = {}
-                data["userName"] = $("#userName").val(),
-                data["password"] = $("#password").val();
-                url = "login";
-                
-            $.ajax({
-                type        : "POST",
-                contentType : "application/json",
-                url     : url,
-                data    : JSON.stringify(data),
-                dataType: 'json',
-                success : function(response) {
-                    console.log("SUCCESS: ", response);
-                    if (response.page !=null) {
-                    window.location.href =response.page;
-                    document.getElementById("loginForm").reset()
-                    }else {
-                    document.getElementById("loginForm").reset()
-                    alert("Bad Credintials")
-                    }
-                    
-                },
-                error : function (e) {
-                    console.log("ERROR: ", e);
-                    document.getElementById("loginForm").reset()
-                    alert("Bad Credintials")
-                }
-            });
-            
-        }); */
     });
     </script>
     

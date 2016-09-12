@@ -18,7 +18,7 @@
         <result property="firstName"  column="first_name" />
         <result property="lastName"  column="last_name" />
         <result property="contact"  column="contact" />
-        <result property="userRole"  column="role_id" />
+        <result property="userRole"  column="user_role" />
         <result property="password"  column="password" />
         <result property="status"  column="status" />
     </resultMap>
@@ -28,7 +28,9 @@
     </select>
     
     <select id="findByUserName" resultMap="list" parameterType="String">
-        select * from user where user_name = #{userName}
+        select u.*, r.user_role from user u
+        join UserRole r on r.role_id = u.role_id
+        where user_name = #{userName}
     </select>
     
     <select id="login" resultMap="list" parameterType="User">

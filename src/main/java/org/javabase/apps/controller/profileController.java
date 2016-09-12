@@ -3,10 +3,14 @@
  */
 package org.javabase.apps.controller;
 
+import javax.servlet.http.HttpSession;
+
+import org.javabase.apps.entity.User;
 import org.javabase.apps.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,14 +27,17 @@ public class profileController {
     UserService userservice;
 
     @RequestMapping(value="/profile", method=RequestMethod.GET)
-    public String profile(ModelMap m){
+    public String profile(HttpSession response){
         
-//        List <User> userList= userservice.selectUser();
-//        
-//        User user=userList.get(0);
-//        m.put("message", "Inventory Management System");
-//        m.put("user", user.getUserName());
-        
+    	Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+    	if (principal instanceof UserDetails) {
+    		String username = ((UserDetails) principal).getUsername();
+    		User user = userservice.findByUserName(username);
+    	    response.setAttribute("userDeatils", user);
+    	}else {
+			
+		}
         return "profile";
         
     }

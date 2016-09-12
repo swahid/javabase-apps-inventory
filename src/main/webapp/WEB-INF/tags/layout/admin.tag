@@ -156,7 +156,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="active"><a href="stock"><i class="fa fa-link"></i> <span>View  Stock</span></a></li>
             <li class="active"><a href="retail"><i class="fa fa-link"></i> <span>Retail Product</span></a></li>
             <li class="active"><a href="retailer"><i class="fa fa-link"></i> <span>Retailer</span></a></li>
-            <li class="active"><a href="company"><i class="fa fa-link"></i> <span>Companyr</span></a></li>
+            <li class="active"><a href="company"><i class="fa fa-link"></i> <span>Company</span></a></li>
             <li class="active"><a href="proCatagory"><i class="fa fa-link"></i> <span>Product Catagory</span></a></li>
             <li class="active"><a href="productItem"><i class="fa fa-link"></i> <span>Product Item</span></a></li>
             <li class="active"><a href="productColor"><i class="fa fa-link"></i> <span>Product Color</span></a></li>
@@ -197,7 +197,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <footer class="main-footer">
         <!-- Default to the left -->
         <jsp:invoke fragment="footer"/>
-        <strong>Copyright &copy; 2016 <a href="#">@Javabase Inc.</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2016 <a href="#">@Javabase Inc.</a></strong> All rights reserved.
       </footer>
     </div><!-- ./wrapper -->
 
