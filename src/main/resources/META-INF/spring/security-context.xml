@@ -23,14 +23,14 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 	        username-parameter="j_username" 
 	        password-parameter="j_password" 
 	        authentication-failure-url="/403"
-	        default-target-url="/profile"
+	        default-target-url="/"
 	        always-use-default-target="true"
         />
         <http-basic/>
         <logout 
 	        logout-success-url="/"
 	        delete-cookies="JSESSIONID"/>
-        <csrf disabled="true"/>
+        <csrf/>
     </http>
       
     <beans:bean id="authenticationManager" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
