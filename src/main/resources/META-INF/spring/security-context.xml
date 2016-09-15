@@ -14,7 +14,6 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
         <intercept-url pattern="/jQuery/**" access="permitAll" />
         <intercept-url pattern="/template/**" access="permitAll" />
         <intercept-url pattern="/plugins/**" access="permitAll" />
-        <intercept-url pattern="/" access="permitAll" />
         <intercept-url pattern="/login" access="permitAll" />
         <intercept-url pattern="/registration" access="permitAll" />
         <intercept-url pattern="/**" access="isAuthenticated()" />
