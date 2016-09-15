@@ -16,15 +16,18 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
         <intercept-url pattern="/plugins/**" access="permitAll" />
         <intercept-url pattern="/" access="permitAll" />
         <intercept-url pattern="/login" access="permitAll" />
+        <intercept-url pattern="/registration" access="permitAll" />
         <intercept-url pattern="/**" access="isAuthenticated()" />
         <form-login  
 	        login-page="/login" 
-	        username-parameter="username" 
-	        password-parameter="password" 
+	        login-processing-url="/j_spring_security_check"
+	        username-parameter="j_username" 
+	        password-parameter="j_password" 
 	        authentication-failure-url="/403"
 	        default-target-url="/profile"
 	        always-use-default-target="true"
         />
+        <http-basic/>
         <logout 
 	        logout-success-url="/"
 	        delete-cookies="JSESSIONID"/>

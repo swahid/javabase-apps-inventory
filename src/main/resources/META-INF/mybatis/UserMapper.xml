@@ -46,14 +46,18 @@
         first_name,
         last_name,
         contact,
-        password
+        password,
+        status,
+        role_id
     )
     values(
         #{userName},
         #{firstName},
         #{lastName},
         #{contact},
-        #{password}
+        #{password},
+        'ACTIVE',
+        '5'
     )
     </insert>
     

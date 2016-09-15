@@ -24,20 +24,19 @@
           <font color="red">
 				<span style="align:center">${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</span>
 		  </font>
-		 	<c:url var="loginUrl" value="/login" />
-          <form action="${loginUrl}" method="POST" autocomplete="off"> 
+          <form action="j_spring_security_check" method="POST" autocomplete="off"> 
             <div class="field-wrap">
             <label>
               User Name<span class="req">*</span>
             </label>
-            <input type="text" name="username" required="required"/>
+            <input type="text" name="j_username" required="required"/>
           </div>
           
           <div class="field-wrap">
             <label>
               Password<span class="req">*</span>
             </label>
-            <input type="password" name="password" required="required"/>
+            <input type="password" name="j_password" required="required"/>
           </div>
           
           <p class="forgot"><a href="#">Forgot Password?</a></p>
@@ -104,7 +103,7 @@
                 data["lastName"] = $("#lastName").val(),
                 data["userName"] = $("#userName").val(),
                 data["password"] = $("#password").val();
-                url = "login/registration";
+                url = "registration";
                 
             $.ajax({
                 type        : "POST",
@@ -113,14 +112,13 @@
                 data    : JSON.stringify(data),
                 dataType: 'json',
                 success : function(data) {
-                    console.log("SUCCESS: ", data);
                     var message = "registration Sucess";
                     $("#msg").html(data.message);
                     document.getElementById("regForm").reset()
                 },
                 error : function(e) {
                     console.log("ERROR: ", e);
-                    $("#msg").html(data.message);
+                    $("#msg").html(e.message);
                     document.getElementById("regForm").reset()
                 }
             });
