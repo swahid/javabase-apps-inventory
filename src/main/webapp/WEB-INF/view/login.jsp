@@ -1,4 +1,4 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="/WEB-INF/tags/layout/includes.jsp"%>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -90,6 +90,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="tab-content">
           <div id="login">   
           <h1>Welcome Back!</h1>
+		<security:authorize access="isAuthenticated()">
+		    <h1>logged in as <security:authentication property="principal.username" /> </h1>
+		</security:authorize>
           
           <font color="red">
 				<span style="align: center">${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}</span>
