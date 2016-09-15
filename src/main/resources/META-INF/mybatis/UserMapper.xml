@@ -29,7 +29,7 @@
     
     <select id="findByUserName" resultMap="list" parameterType="String">
         select u.*, r.user_role from user u
-        join UserRole r on r.role_id = u.role_id
+        join userrole r on r.role_id = u.role_id
         where user_name = #{userName}
     </select>
     
